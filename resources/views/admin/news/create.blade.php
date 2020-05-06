@@ -1,23 +1,31 @@
-<!DOCTYPE html>
+{{-- layouts/admin.blade.phpを読み込む --}}
 
-<html>
-    
-    <head>
+@extends('layouts.admin')
+
+{{-- admin.blade.phpの@yield('title')に'ニュースの新規作成を埋め込む --}}
+
+@section('title', 'ニュースの新規作成')
+
+{{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+
+@section('content')
+
+    <div class="container">
         
-        <meta charset="utf-8">
+        <div class="row">
+            
+            <div class="col-md-8 mx-auto">
+                
+                <h2>ニュース新規作成</h2>
+                
+            </div>
+            
+        </div>
         
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <titile>MyNews</titile>
-        
-    </head>
-    
-    <body>
-        
-        <h1>Myニュース作成画面</h1>
-        
-    </body>
-    
-</html>
+    </div>
+
+@endsection
+
+
+
+

@@ -16,7 +16,7 @@
     
     <body>
         
-        <h1><Myedit>MyEdit作成画面</Myedit></h1>
+        <h1><Myedit>Myプロフィール編集画面</Myedit></h1>
         
     </body>
     
