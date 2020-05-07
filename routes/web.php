@@ -16,18 +16,12 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add');
-    Route::get('profile/create', 'Admin\ProfileController@add');
-    Route::get('profile/edit', 'Admin\ProfileController@edit');
+    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
+    Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
+    Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
 });
 
-//課題3
 
-//Route::get('XXXXXX','XXX\AAAcountloller@BBB');
+Auth::routes();
 
-
-/*課題4
-
-コード、20番目、21番目に追記しました。
-
-*/
+Route::get('/home', 'HomeController@index')->name('home');
