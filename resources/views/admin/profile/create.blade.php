@@ -18,8 +18,7 @@
                 
                 <h2>Myプロフィール</h2>
                 
-                <from action="{{ action('Admin\ProfileController@create') }}" method="post"
-enctype="multipart\from-data">
+                <from action="{{ action('Admin\ProfileController@create') }}" method="post" enctype="multipart\form-data">
                     
                     @if (count($errors) > 0)
                     
@@ -41,8 +40,7 @@ enctype="multipart\from-data">
                         
                         <div class="col-md-10">
                             
-                            <input type="name" class="form-control" name="name" value="{{
-old('name') }}">
+                            <input type="name" class="form-control" name="name" value="{{ old('name') }}">
                 
                         </div>
                         
@@ -54,8 +52,7 @@ old('name') }}">
                         
                         <div class="col-md-10">
                             
-                            <input type="gender" class="form-control" name="gender" value="{{
-old('gender') }}">
+                            <input type="gender" class="form-control" name="gender" value="{{ old('gender') }}">
                 
                         </div>
                         
@@ -67,8 +64,7 @@ old('gender') }}">
                         
                         <div class="col-md-10">
                             
-                            <input type="hobby" class="form-control" name="hobby" value="{{
-old('hobby') }}">
+                            <input type="hobby" class="form-control" name="hobby" value="{{ old('hobby') }}">
                 
                         </div>
                         
@@ -80,8 +76,7 @@ old('hobby') }}">
                         
                         <div class="col-md-10">
                             
-                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}
-</textarea>
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                             
                         </div>
                         

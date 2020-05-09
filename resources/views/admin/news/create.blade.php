@@ -18,8 +18,7 @@
                 
                 <h2>ニュース新規作成</h2>
                 
-                <from action="{{ action('Admin\NewsController@create') }}" method="post"
-enctype="multipart\from-data">
+                <from action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart\form-data">
                     
                     @if (count($errors) > 0)
                     
@@ -41,8 +40,7 @@ enctype="multipart\from-data">
                         
                         <div class="col-md-10">
                             
-                            <input type="text" class="form-control" name="title" value="{{
-old('title') }}">
+                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                             
                         </div>
                         
@@ -54,8 +52,7 @@ old('title') }}">
                         
                         <div class="col-md-10">
                             
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}
-</textarea>
+                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
                             
                         </div>
                         
