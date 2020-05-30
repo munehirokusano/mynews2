@@ -31,10 +31,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('profile/edit', 'Admin\ProfileController@update');
     
 });
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', 'NewsController@index');
-    Route::get('/', 'ProfileController@index');
-});
+
+Route::get('/', 'NewsController@index');
+Route::get('/', 'ProfileController@index');
+
 
 Auth::routes();
 
