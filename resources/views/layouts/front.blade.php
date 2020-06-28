@@ -14,12 +14,12 @@
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <!-- styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel bg-dark">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
@@ -30,6 +30,9 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side of Navbar -->
                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Top<span class="sr-only">(current)</span></a>
+                            </li>
                         </ul>
                         <! -- Right Side of Navbar -->
                         <ul class="navbar-nav ml-auto">   <!-- r？ l？-->

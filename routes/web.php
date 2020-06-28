@@ -30,6 +30,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('profile/create', 'Admin\ProfileController@create');
     Route::post('profile/edit', 'Admin\ProfileController@update');
     
+    Route::get('pictureTitle/create', 'Admin\PictureTitleController@add');
+    Route::get('pictureTitle', 'Admin\PictureTitleController@index');
+    Route::get('pictureTitle/edit', 'Admin\PictureTitleController@edit');
+    Route::get('pictureTitle/delete', 'Admin\PictureTitleController@delete');
+    Route::post('pictureTitle/create', 'Admin\PictureTitleController@create');
+    Route::post('pictureTitle/edit', 'Admin\PictureTitleController@update');
+    
+    
 });
 
 Route::get('/', 'NewsController@index');
