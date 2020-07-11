@@ -13,11 +13,50 @@ class NewsController extends Controller
     public function index(Request $request) {
         $posts = News::all()->sortByDesc('updated_at');
         
-        if (count($posts) > 0) {
-            $headline = $posts->shift();    
-        } else {
-            $headline = null;
+        $i = 0;
+        $headlines = [];
+        
+        foreach($posts as $post) {
+            if($i >3){
+                break;
+            }  
+            $headlines[] = $posts->shift();
+            $i++;
         }
+       
+        
+        
+        
+        // if (count($posts) > 0 ) {
+        //     // $headline = $posts->shift();
+            
+        //     $headlines[] = $posts->shift();
+        // } else {
+        //     $headlines = null;
+        // }
+        
+        // if (count($posts) > 1) {
+        //     // $postSecond =  $posts->shift();
+        //     $headlines[] = $posts->shift();
+        // } else {
+        //     $headlines = null;
+        // }
+        
+        // if (count($posts) > 2) {
+        //     // $postSecond =  $posts->shift();
+        //     $headlines[] = $posts->shift();
+        // } else {
+        //     $headlines = null;
+        // }
+        
+        
+        // if (count($posts) > 2) {
+        //     // $postThird = News::find(3);
+        //     $headlines[] = $posts->shift();
+        // } else {
+        //     $postThird = null;
+        // }
+        
         
         $postPictureTitles = PictureTitle::all()->sortByDesc('updated_at');
         
@@ -40,11 +79,14 @@ class NewsController extends Controller
         } else {
             $postPictureTitleCounts = null;
         }
-        
+        // dd($headlines);
     
         return view('news.index', [
-            'headline' => $headline, 
+            // 'headline' => $headline, 
+            'headlines' => $headlines,
             'posts' => $posts, 
+            // 'postsecond' => $postSecond,
+            // 'postThird' => $postThird,
             'PictureTitleHeadline' => $PictureTitleHeadline, 
             'postPictureTitles' => $postPictureTitles,
             'postPictureTitleFirstCounts' => $postPictureTitleFirstCounts,

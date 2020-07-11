@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div id="main_visual" class="carousel side" data-ride="carousel">
+        <div id="main_visual" class="carousel side bg-secondary" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#main-visual" data-slide-to="0" class="active"></li>
                 @foreach($postPictureTitles as $postPictureTitle)
@@ -14,7 +14,8 @@
                     <div class="carousel-item active">
                         @if ($PictureTitleHeadline->image_path)
                         <div class="text-center">
-                            <img class="img-fluid" src="{{ asset('storage/image/' . $PictureTitleHeadline->image_path) }}" alt="画像1" style="max-height: 50%; max-width: 50%">
+                            <!--<img src="{{ asset('storage/image/' . $PictureTitleHeadline->image_path) }}" alt="画像1">-->
+                            <img class="img-fluid" src="{{ asset('storage/image/' . $PictureTitleHeadline->image_path) }}" alt="画像1">
                         </div>
                         @endif
                         <div class="carousel-caption d-none d-md-block">
@@ -26,7 +27,8 @@
                 @foreach($postPictureTitles as $postPictureTitle)
                     <div class="carousel-item">
                         <div class="text-center">
-                            <img class="img-fluid" src="{{ asset('storage/image/' . $postPictureTitle->image_path) }}" alt="画像"　style="max-height: 50%; max-width: 50%">
+                            <!--<img src="{{ asset('storage/image/' . $postPictureTitle->image_path) }}" alt="画像">-->
+                            <img class="img-fluid" src="{{ asset('storage/image/' . $postPictureTitle->image_path) }}" alt="画像">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h2>{{ str_limit($postPictureTitle->title, 70) }}</h2>
@@ -35,17 +37,19 @@
                     </div>
                 @endforeach
             </div>
-            <a class="carousel-control-prev" href="#main_visual" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only" style="color:#000;">前に戻る</span>
-            </a>
-            <a class="carousel-control-next" href="#main_visual" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">次に進む</span>
-            </a>
+                <a class="carousel-control-prev" href="#main_visual" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">前に戻る</span>
+                </a>
+                <a class="carousel-control-next" href="#main_visual" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">次に進む</span>
+                </a>
+            </div>
         </div>
     </div>
-    
+    {{--
+    <!--bg-secondary-->
     <!--<div class="container">-->
     <!--    <hr color="#c0c0c0">-->
     <!--    @if (!is_null($headline))-->
@@ -100,8 +104,10 @@
     <!--        </div>    -->
     <!--    </div>-->
     <!--</div>-->
-    
+    --}}
     <div class="container">
+     
+    @foreach ($headlines as $headlineNumber => $headline)
         <div class="media mt-5">
             <div class="image mr-3">
             @if ($headline->image_path)
@@ -114,7 +120,13 @@
                     <h1>{{ str_limit($headline->title, 70) }}</h1>
                 </div>
                 <div class="col-md-6">
-                    <p class="body mx-auto">最新記事</p>
+                    <p class="body mx-auto">
+                        @if ($headline === reset($headlines))
+                        最新記事
+                        @else
+                        {{ $headline->updated_at->format('Y年m月d日') }}
+                        @endif
+                    </p>
                 </div>
                 <div class="col-md-6">
                     <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
@@ -122,25 +134,6 @@
                 @endif
             </div>    
         </div>
-        @foreach($posts as $post)
-        <div class="media mt-3">
-            <div class="image mr-3">
-                @if ($post->image_path)
-                    <img src="{{ $post->image_path }}">
-                @endif
-            </div>
-            <div class="media-body">
-                <div class="title">
-                    <h1>{{ str_limit($post->title, 150) }}</h1>
-                </div>
-                <div class="date">
-                    <p>{{ $post->updated_at->format('Y年m月d日') }}</p>
-                </div>
-                <div class="body">
-                    <p>{{ str_limit($post->body,1500) }}</p>
-                </div>
-            </div>
-        </div>
-        @endforeach
+    @endforeach
     <div>
 @endsection
