@@ -25,7 +25,7 @@ class NewsController extends Controller
         $form = $request->all();
         
         if (isset($form['image'])) {
-            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
             $news->image_path = Storage::disk('s3')->url($path);
         } else {
             $news->image_path = null;
@@ -39,17 +39,18 @@ class NewsController extends Controller
         return redirect('admin/news/create');
     }
 
+    public function index(Request $request)
+    {
 
-    public function index(Request $request) {
         $cond_title = $request->cond_title;
         if ($cond_title !='') {
             $posts = News::where('title' , $cond_title)->get();
         } else {
             $posts = News::all();
         }
-        return view('admin.news.index',['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
-    
+
     public function edit(Request $request) {
         $news = News::find($request->id);
         if (empty($news)) {
@@ -66,7 +67,7 @@ class NewsController extends Controller
         if ($request->remove == 'true') {
             $news_form['image_path'] = null;
         } elseif ($request->file('image')) {
-            $path = Storage::disk('s3')->putFile('/',$news_form['image'],'public');
+            $path = Storage::disk('s3')->putFile('/', $news_form['image'], 'public');
             $news->image_path = Storage::disk('s3')->url($path);
         } else {
             $news_form['image_path'] = $news->image_path;

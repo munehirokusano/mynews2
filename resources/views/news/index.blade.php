@@ -15,7 +15,7 @@
                         @if ($PictureTitleHeadline->image_path)
                         <div class="text-center">
                             <!--<img src="{{ asset('storage/image/' . $PictureTitleHeadline->image_path) }}" alt="画像1">-->
-                            <img class="img-fluid" src="{{ asset('storage/image/' . $PictureTitleHeadline->image_path) }}" alt="画像1">
+                            <img class="img-fluid" src="{{ $PictureTitleHeadline->image_path }}" alt="画像1">
                         </div>
                         @endif
                         <div class="carousel-caption d-none d-md-block">
@@ -28,7 +28,7 @@
                     <div class="carousel-item">
                         <div class="text-center">
                             <!--<img src="{{ asset('storage/image/' . $postPictureTitle->image_path) }}" alt="画像">-->
-                            <img class="img-fluid" src="{{ asset('storage/image/' . $postPictureTitle->image_path) }}" alt="画像">
+                            <img class="img-fluid" src="{{ $postPictureTitle->image_path }}" alt="画像">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h2>{{ str_limit($postPictureTitle->title, 70) }}</h2>
