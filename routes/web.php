@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 Route::get('/', 'NewsController@index');
 Route::get('/profile', 'ProfileController@index');
-
+route::get('/blogPage/{headline_id}', 'NewsController@blogPage');
 
 Auth::routes();
 

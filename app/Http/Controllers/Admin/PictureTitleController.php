@@ -22,8 +22,6 @@ class PictureTitleController extends Controller
         $form = $request->all();
         
         if (isset($form['image'])) {
-            // $path = $request->file('image')->store('public/image');
-            // $pictureTitle->image_path = basename($path);
             $path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
             $pictureTitle->image_path = Storage::disk('s3')->url($path);
         } else {
@@ -65,19 +63,18 @@ class PictureTitleController extends Controller
         $pictureTitle = PictureTitle::find($request->id);
         $pictureTitle_form = $request->all();
         if (isset($pictureTitle_form['image'])) {
-            // $path = $request->file('image')->store('public/image');
-            // $pictureTitle->image_path = basename($path);
-            // unset($pictureTitle_form['image']);
             $path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
             $pictureTitle->image_path = Storage::disk('s3')->url($path);
         } elseif ($request->file('image')) {
             $path = Storage::disk('s3')->putFile('/', $pictureTitle_form['image'], 'public');
-            $newpictureTitles->image_path = Storage::disk('s3')->url($path);
+            $pictureTitle->image_path = Storage::disk('s3')->url($path);
         
             // elseif (isset($request->remove)) {
             // $pictureTitle->image_path = null;
             // unset($pictureTitle_form['remove']);
         } else {
+            $pictureTitle_form['image_path'] = $pictureTitle->image_path;
+        }
         // unset($pictureTitle_form['_token']);
         // $pictureTitle->fill($pictureTitle_form)->save();
         
@@ -85,15 +82,14 @@ class PictureTitleController extends Controller
             unset($pictureTitle_form['_token']);
             unset($pictureTitle_form['image']);
             unset($pictureTitle_form['remove']);
-            $news->fill($pictureTitle_form)->save();
+            $pictureTitle->fill($pictureTitle_form)->save();
             
-            $history = new History;
-            $history->news_id = $news->id;
-            $history->edited_at = Carbon::now();
-            $history->save();
+            // $history = new History;
+            // $history->news_id = $news->id;
+            // $history->edited_at = Carbon::now();
+            // $history->save();
         
-            return redirect('admin/news/');
-        }
+            return redirect('admin/pictureTitle/');
     }
     
     public function delete(Request $request)

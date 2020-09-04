@@ -41,17 +41,17 @@ class NewsController extends Controller
 
     public function index(Request $request)
     {
-
         $cond_title = $request->cond_title;
         if ($cond_title !='') {
-            $posts = News::where('title' , $cond_title)->get();
+            $posts = News::where('title', $cond_title)->get();
         } else {
             $posts = News::all();
         }
         return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
-    public function edit(Request $request) {
+    public function edit(Request $request)
+    {
         $news = News::find($request->id);
         if (empty($news)) {
             abort(404);
@@ -59,7 +59,8 @@ class NewsController extends Controller
         return view('admin.news.edit', ['news_form' => $news]);
     }
     
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $this->validate($request, News::$rules);
         $news = News::find($request->id);
         $news_form = $request->all();
@@ -85,7 +86,8 @@ class NewsController extends Controller
         return redirect('admin/news/');
     }
     
-    public function delete(Request $request) {
+    public function delete(Request $request)
+    {
         $news = News::find($request->id);
         
         $news->delete();

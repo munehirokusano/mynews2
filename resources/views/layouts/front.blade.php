@@ -19,24 +19,35 @@
     </head>
     <body>
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel bg-dark">
+            <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navber-brand bg-dark" href="#">ここにロゴ</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=#navbar-content aria-controls="navbar-content" aria-expanded="false" aria-label="toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side of Navbar -->
-                        <ul class="navbar-nav mr-auto">
+                    <div class="collapse navbar-collapse" id="navbar-content">
+                        <ul class=navbar-nav mr-auto>
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Top<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#">入会案内<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">イベント・行事<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">カテゴリ<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">スタッフ紹介<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
+
+                   
+                        
+                        
                         <! -- Right Side of Navbar -->
-                        <ul class="navbar-nav ml-auto">   <!-- r？ l？-->
-                        <!-- Authentication Links -->
+
+                        <!-- <ul class="navbar-nav ml-auto"> 
+                        Authentication Links
                         </ul>
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -55,8 +66,8 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
-                        </ul>
+                            @endguest -->
+                        <!-- </ul> -->
                     </div>
                 </div>
             </nav>
