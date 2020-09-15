@@ -1,5 +1,14 @@
+.main-title {
+  font-family: "Caveat", cursive;
+  color: black;
+}
+
 body {
-  color: #000;
+  color: #020101;
+}
+
+.head-navber {
+  list-style: none;
 }
 
 .header .logo {

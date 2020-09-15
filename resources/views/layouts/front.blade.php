@@ -13,21 +13,46 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+        
         <!-- styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
+            
     </head>
+    <header>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="logo-image col-md-2 py-2">
+                    <img src="{{ asset('images/askarogo.jpg') }}" alt="ロゴ">
+                </div>
+                <div class="main-title col-md-6 py-2">
+                    <div class="d-flex justify-content-center">
+                        <div class="mr-5">
+                            <h1>ASKASPORTSCLUB</h1>
+                        </div>
+                        <div>
+                            <a href="https://www.jpnsport.go.jp/">
+                                <img src="{{ asset('images/Twitter_Social_Icon_Circle_Color.png') }}" width="20%" class="img-fluid" alt="ツイッターロゴ">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
     <body>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
                 <div class="container">
-                    <a class="navber-brand bg-dark" href="#">ここにロゴ</a>
+                    <!-- <a class="navber-brand" href="#">menu</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=#navbar-content aria-controls="navbar-content" aria-expanded="false" aria-label="toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbar-content">
-                        <ul class=navbar-nav mr-auto>
-                            <li class="nav-item active">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">入会案内<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
@@ -39,11 +64,50 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">スタッフ紹介<span class="sr-only">(current)</span></a>
                             </li>
+                            <li class="nav item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspop="true" aria-expanded="false">
+                                    事業所一覧
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">宇都宮</a>
+                                    <a class="dropdown-item" href="#">小山</a>
+                                    <a class="dropdown-item" href="#">真岡</a>
+                                    <a class="dropdown-item" href="#">下野</a>
+                                    <a class="dropdown-item" href="#">筑西</a>
+                                    <a class="dropdown-item" href="#">野木</a>
+                                    <a class="dropdown-item" href="#">古河</a>
+                                </div>
+                            </li>
+                            <li class="nav item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspop="true" aria-expanded="false">
+                                    ご案内
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">ストリートダンス新規教室のご案内</a>
+                                    <a class="dropdown-item" href="#">逆上がり、跳び箱、縄跳び教室のご案内</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">お問い合わせ<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">アクセス<span class="sr-only">(current)</span></a>
+                            </li>
                         </ul>
+                    </div>
+                    <ul class="head-navber pt-3">
+                        <li>
+                            <form method="get" action="http://www.google.co.jp/search" target="_blank">
+                                <input type="text" name="q" size="22" maxlength="255" value="">
+                                <input type="submit" name="btng" value="検索">
+                                <input type="hidden" name="hl" value="ja">
+                                <input type="hidden" name="sitesearch" value="ここにアドレス">
+                            </form>
+                        </li>
+                    </ul>
 
-                   
-                        
-                        
+
+
                         <! -- Right Side of Navbar -->
 
                         <!-- <ul class="navbar-nav ml-auto"> 
@@ -68,13 +132,20 @@
                             </li>
                             @endguest -->
                         <!-- </ul> -->
-                    </div>
                 </div>
             </nav>
             {{--ここまでナビゲーションバー --}}
-            <main class="py-4">
+            <main>
             @yield('content')
             </main>
         </div>
-    </body>    
+    </body>
+    <footer>
+        <div class="text-center">
+            <a href="https://www.jpnsport.go.jp/">
+                <img src="{{ asset('images/hp_banner_yoko.jpg') }}" class="img-fluid" alt="フッターロゴ">
+            </a>
+            <p class="mt-3"><span class="border-top"><small>ASKSスポーツクラブ TEL:〇〇〇 MAIL:〇〇〇</small></span></p>
+        </div>
+    </footer>    
 </html>

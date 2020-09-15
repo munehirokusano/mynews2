@@ -1,0 +1,25 @@
+@font-face
+{
+font-family: はれのそら明朝;
+src: url('https://cdn.leafscape.be/Harenosora/harenosora_web.woff2')
+     format("woff2");
+}
+
+.jumbotron { 
+    height: 500px;
+    width: 960px;
+    background-image: url(image/sign.png);
+    // background-size: contain;
+}
+.sub-title {
+    font-family: 'M PLUS 1p', sans-serif; 
+    color: rgb(252, 245, 245);
+}
+.card-aria {
+    background-color: #6c757d21;
+    font-size: 20px;
+    font-family: はれのそら明朝;
+}
+.movie-title {
+    font-family: はれのそら明朝;
+}
