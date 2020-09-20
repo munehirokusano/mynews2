@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('news/create', 'Admin\NewsController@add');
     Route::get('news/delete', 'Admin\NewsController@delete');
     Route::get('news/edit', 'Admin\NewsController@edit');
@@ -29,6 +29,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('profile', 'Admin\ProfileController@index');
     Route::post('profile/create', 'Admin\ProfileController@create');
     Route::post('profile/edit', 'Admin\ProfileController@update');
+
+    Route::get('contact/create', 'Admin\ContactController@add');
+    
     
     Route::get('pictureTitle/create', 'Admin\PictureTitleController@add');
     Route::get('pictureTitle', 'Admin\PictureTitleController@index');
@@ -36,13 +39,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('pictureTitle/delete', 'Admin\PictureTitleController@delete');
     Route::post('pictureTitle/create', 'Admin\PictureTitleController@create');
     Route::post('pictureTitle/edit', 'Admin\PictureTitleController@update');
-    
-    
 });
 
-Route::get('/', 'NewsController@index');
-Route::get('/profile', 'ProfileController@index');
-route::get('/blogPage/{headline_id}', 'NewsController@blogPage');
+Route::group(['prefix' => 'contact'], function () {
+    Route::get('input', 'Release\ContactController@input');
+    Route::post('check', 'Release\ContactController@check');
+    Route::post('create', 'Release\ContactController@create');
+    Route::get('complete', 'Release\ContactController@complete');
+});
+
+Route::get('/', 'Release\NewsController@index');
+Route::get('/profile', 'Release\ProfileController@index');
+Route::get('/blogPage/{headline_id}', 'Release\NewsController@blogPage');
 
 Auth::routes();
 

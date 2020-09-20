@@ -17,34 +17,28 @@
         
         <!-- styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/front.css') }}" rel="stylesheet">
-            
+        <link href="{{ asset('css/front.css') }}" rel="stylesheet">      
     </head>
     <header>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="logo-image col-md-2 py-2">
+            <div class="row justify-contentspace-between pt-2 align-items-center">
+                <div class="col-md-4 logo-image mb-2">
                     <img src="{{ asset('images/askarogo.jpg') }}" alt="ロゴ">
                 </div>
-                <div class="main-title col-md-6 py-2">
-                    <div class="d-flex justify-content-center">
-                        <div class="mr-5">
-                            <h1>ASKASPORTSCLUB</h1>
-                        </div>
-                        <div>
-                            <a href="https://www.jpnsport.go.jp/">
-                                <img src="{{ asset('images/Twitter_Social_Icon_Circle_Color.png') }}" width="20%" class="img-fluid" alt="ツイッターロゴ">
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-md-4 main-title mb-2">
+                    <h1>ASKASPORTSCLUB</h1>
                 </div>
-                
+                <div class="col-md-4 mb-2">
+                    <a href="https://www.jpnsport.go.jp/">
+                        <img src="{{ asset('images/Twitter_Social_Icon_Circle_Color.png') }}" width="10%" class="img-fluid" alt="ツイッターロゴ">
+                    </a>
+                </div>
             </div>
         </div>
     </header>
     <body>
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
+            <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top py-2">
                 <div class="container">
                     <!-- <a class="navber-brand" href="#">menu</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=#navbar-content aria-controls="navbar-content" aria-expanded="false" aria-label="toggle navigation">
@@ -88,14 +82,14 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">お問い合わせ<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="contact">お問い合わせ<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">アクセス<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
                     </div>
-                    <ul class="head-navber pt-3">
+                    <ul class="head-navber mt-2">
                         <li>
                             <form method="get" action="http://www.google.co.jp/search" target="_blank">
                                 <input type="text" name="q" size="22" maxlength="255" value="">

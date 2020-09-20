@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Release;
 
 use Illuminate\Http\Request;
 
@@ -46,7 +46,7 @@ class NewsController extends Controller
             $postPictureTitleCounts = null;
         }
 
-        return view('news.index', [ 
+        return view('Release.news.index', [
             'headlines' => $headlines,
             'posts' => $posts,
             'PictureTitleHeadline' => $PictureTitleHeadline,
@@ -66,5 +66,9 @@ class NewsController extends Controller
         return view('news.blogPage', [
             'blogPage' => $blogPage,
         ]);
+    }
+    public function contact()
+    {
+        return view('news.contact');
     }
 }
