@@ -82,7 +82,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact">お問い合わせ<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="contact/input">お問い合わせ<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">アクセス<span class="sr-only">(current)</span></a>

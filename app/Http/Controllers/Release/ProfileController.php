@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Release;
 
 use Illuminate\Http\Request;
-
-use App\Profile;
+use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $posts = Profile::all()->sortByDesc('updated_at');
         if (count($posts) > 0) {
             $headline = $posts->shift();
