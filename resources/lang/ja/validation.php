@@ -152,8 +152,9 @@ return [
         'gender' => '性別',
         'hobby' => '趣味',
         'introduction' => '自己紹介',
-        'email' => 'メールアドレス',
-        'text' => 'その他地域',
-        'message' => 'お問い合わせ内容'
+        'contact_name' => 'お名前',
+        'contact_email' => 'メールアドレス',
+        'contact_text' => 'その他地域',
+        'contact_message' => 'お問い合わせ内容'
         ],
 ];

@@ -2,6 +2,9 @@
 
 @section('content')
 
+<!-- scripts -->
+<script src="{{ asset('js/contact.js') }}" defer></script>
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb container">
         <li class="breadcrumb-item">
@@ -21,35 +24,34 @@
             <table class="table table-bordered mb-5">
                 <tbody>
                     <tr class="table-success">
-                    <input type="hidden" name="name" value="{{ $item['name'] }}">
+                    <input type="hidden" name="contact_name" value="{{ $item['contact_name'] }}">
                         <th scope="row">お名前</th>
-                        <td>{{ $item['name'] }}</td>
+                        <td>{{ $item['contact_name'] }}</td>
                     </tr>
                     <tr class="table-success">
-                    <input type="hidden" name="email" value="{{ $item['email'] }}">
+                    <input type="hidden" name="contact_email" value="{{ $item['contact_email'] }}">
                         <th scope="row">メールアドレス</th>
-                        <td>{{ $item['email'] }}</td>
+                        <td>{{ $item['contact_email'] }}</td>
                     </tr>
-                    @foreach($courses as $course)
-                        <input type="hidden" name="course[]" value="{{ $course }}">
-                        <tr class="table-success">
-                            <th scope="row">体験コース</th>
-                            <td>{{ $course }}</td>
-                        </tr>
-                    @endforeach
+                    <input type="hidden" name="contact_course" value="{{ $contact_course }}">
                     <tr class="table-success">
-                    <input type="hidden" name="area" value="{{ $area }}">
+                        <th scope="row">体験コース</th>
+                        <td>{{ $contact_course }}</td>
+                    </tr>
+                    <tr class="table-success">
+                    <input type="hidden" name="contact_area" value="{{ $contact_area }}">
                         <th scope="row">お住まい</th>
-                        <td>{{ $area }}</td>
+                        <td>{{ $contact_area }}</td>
                     </tr>
                     <tr class="table-success">
+                    <input type="hidden" name="contact_message" value="{{ $item['contact_message'] }}">
                         <th scope="row">お問い合わせ内容</th>
-                        <td>{{ $item['message'] }}</td>
+                        <td>{{ $item['contact_message'] }}</td>
                     </tr>                
                 </tbody>
             </table>
             <div class="form-group row justify-content-center">
-                <button type="submit" class="btn btn-primary mr-5">送信する</button>
+                <button type="submit" class="btn btn-primary mr-5" id="check_send">送信する</button>
                 <button type="button" class="btn btn-primary" onclick="history.back()">　戻る　</button>
             </div>
         </form>

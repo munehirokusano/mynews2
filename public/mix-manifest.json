@@ -5,5 +5,6 @@
     "/css/profile.css": "/css/profile.css",
     "/css/front.css": "/css/front.css",
     "/css/index.css": "/css/index.css",
-    "/js/input.js": "/js/input.js"
+    "/js/contact.js": "/js/contact.js",
+    "/js/sns.js": "/js/sns.js"
 }

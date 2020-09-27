@@ -31,7 +31,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('profile/edit', 'Admin\ProfileController@update');
 
     Route::get('contact/create', 'Admin\ContactController@add');
-    
+    Route::get('contact', 'Admin\ContactController@index');
+    Route::get('contact/delete', 'Admin\ContactController@delete');
     
     Route::get('pictureTitle/create', 'Admin\PictureTitleController@add');
     Route::get('pictureTitle', 'Admin\PictureTitleController@index');

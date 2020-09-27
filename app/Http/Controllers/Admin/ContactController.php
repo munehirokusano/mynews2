@@ -5,25 +5,31 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Contact;
+
 class ContactController extends Controller
 {
     public function add()
     {
-        return view('admin.news.create');
+        return view('admin.contact.create');
     }
 
     public function index(Request $request)
     {
-        // $this->validate($request, Profile::$rules);
+        $contact = new Contact;
+
+        $items = $contact->all();
+
+        return view('admin.contact.index', [
+            'items'=> $items ,
+            ]);
+    }
+
+    public function delete(Request $request)
+    {
+        $contact = Contact::find($request->id);
         
-        // $profiles = new Profile;
-        // $form = $request->all();
-        
-        // unset($form['_token']);
-        
-        // $profiles->fill($form);
-        // $profiles->save();
-        
-        // return redirect('admin/profile/create');
+        $contact->delete();
+        return redirect('admin/contact/');
     }
 }

@@ -81,30 +81,48 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/input.js":
-/*!*******************************!*\
-  !*** ./resources/js/input.js ***!
-  \*******************************/
+/***/ "./resources/js/contact.js":
+/*!*********************************!*\
+  !*** ./resources/js/contact.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\work\\mynews2\\resources\\js\\input.js'");
+$(function () {
+  $('input[name="contact_area"]:radio').change(function () {
+    var radioval = $(this).val();
+
+    if (radioval == 6) {
+      $('#contact_text').removeAttr('disabled');
+      $('.other_label').removeClass('disabled');
+    } else {
+      $('#contact_text').attr('disabled', 'disabled');
+      $('.other_label').addClass('disabled');
+    }
+  });
+});
+$('#input_check').on('click', function () {
+  $(this).css('pointer-events', 'none');
+});
+$('#check_send').on('click', function () {
+  $(this).css('pointer-events', 'none');
+});
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************!*\
-  !*** multi ./resources/js/input.js ***!
-  \*************************************/
+/***/ 2:
+/*!***************************************!*\
+  !*** multi ./resources/js/contact.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\input.js */"./resources/js/input.js");
+module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\contact.js */"./resources/js/contact.js");
 
 
 /***/ })

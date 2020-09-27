@@ -22,40 +22,47 @@ class ContactController extends Controller
     public function check(Request $request)
     {
         $item = [];
-        $courses = [];
-        $area = null;
+        $contact_courses = [];
+        $contact_area = null;
 
         $this->validate($request, Contact::$rules);
         
         $item = $request->all();
-        $courses = $item["course"];
+        $contact_courses = $item["contact_course"];
+
+        $contact_course = implode(',', $contact_courses);
         
-        if ($item["area"] == 6) {
-            $area = $item["text"];
+        if ($item["contact_area"] == 6) {
+            $contact_area = $item["contact_text"];
         } else {
-            $area = $item["area"];
+            $contact_area = $item["contact_area"];
         }
 
         unset($item['_token']);
 
         return view('contact.check', [
             'item'=> $item ,
-            'courses'=> $courses ,
-            'area'=> $area
+            'contact_course'=> $contact_course ,
+            'contact_area'=> $contact_area
             ]);
     }
 
     public function create(Request $request)
     {
+        $contact = new Contact;
+
         $item = [];
         $item = $request->all();
 
         unset($item['_token']);
 
-        return view('contact.input');
+        $contact->fill($item);
+        $contact->save();
+
+        redirect('contact/complete');
     }
     public function complete(Request $request)
     {
-
+        return view('contact.complete');
     }
 }

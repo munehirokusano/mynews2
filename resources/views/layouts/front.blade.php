@@ -10,6 +10,7 @@
         <title>@yield('title')</title>
         <!-- scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/sns.js') }}" defer></script>
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -29,10 +30,11 @@
                     <h1>ASKASPORTSCLUB</h1>
                 </div>
                 <div class="col-md-4 mb-2">
-                    <a href="https://www.jpnsport.go.jp/">
+                    <a href="https://twitter.com">
                         <img src="{{ asset('images/Twitter_Social_Icon_Circle_Color.png') }}" width="10%" class="img-fluid" alt="ツイッターロゴ">
                     </a>
                 </div>
+                <div id="sns-area"></div>
             </div>
         </div>
     </header>
