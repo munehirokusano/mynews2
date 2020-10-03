@@ -39,7 +39,7 @@
                                     <td>
                                         <form action="{{ action('Admin\ContactController@delete', ['id' => $item->id]) }}" method="post">
                                         @csrf
-                                            <input type="submit" name="delete" value="削除" onClick="delete_alert(event);return false;">
+                                            <input type="submit" name="delete" value="削除" onClick="confirm('本当に削除してもよろしいですか？');return true;">
                                         </form>
                                     </td>
                                 </tr>
