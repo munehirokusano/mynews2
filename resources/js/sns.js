@@ -24,7 +24,7 @@ function generate_share_button(area, url, text) {
  
     // シェアボタンにリンクを追加
     var clickEv = 'onclick="popupWindow(this.href); return false;"';
-    var twLink = '<a href="' + twHref + '" ' + clickEv + '>twitter</a>';
+    var twLink = '<a href="' + twHref + '" ' + clickEv + '><img src="/images/Twitter_Social_Icon_Circle_Color.png" width="10%" class="img-fluid" alt="ツイッターロゴ"></a>';
     var fbLink = '<a href="' + fbHref + '" ' + clickEv + '>facebook</a>';
     var liLink = '<a href="' + liHref + '" target="_blank">line</a>';
     twBtn.innerHTML = twLink;

@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('contact/create', 'Admin\ContactController@add');
     Route::get('contact', 'Admin\ContactController@index');
-    Route::get('contact/delete', 'Admin\ContactController@delete');
+    Route::post('contact/delete', 'Admin\ContactController@delete');
     
     Route::get('pictureTitle/create', 'Admin\PictureTitleController@add');
     Route::get('pictureTitle', 'Admin\PictureTitleController@index');

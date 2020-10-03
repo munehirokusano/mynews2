@@ -16,9 +16,7 @@ class ContactController extends Controller
 
     public function index(Request $request)
     {
-        $contact = new Contact;
-
-        $items = $contact->all();
+        $items = Contact::all();
 
         return view('admin.contact.index', [
             'items'=> $items ,
@@ -27,9 +25,9 @@ class ContactController extends Controller
 
     public function delete(Request $request)
     {
-        $contact = Contact::find($request->id);
-        
-        $contact->delete();
+        $contact = Contact::find($request->input('id'));
+        // $contact->delete();
+
         return redirect('admin/contact/');
-    }
+  }
 }

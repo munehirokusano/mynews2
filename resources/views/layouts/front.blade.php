@@ -30,11 +30,8 @@
                     <h1>ASKASPORTSCLUB</h1>
                 </div>
                 <div class="col-md-4 mb-2">
-                    <a href="https://twitter.com">
-                        <img src="{{ asset('images/Twitter_Social_Icon_Circle_Color.png') }}" width="10%" class="img-fluid" alt="ツイッターロゴ">
-                    </a>
+                    <div id="sns-area"></div>
                 </div>
-                <div id="sns-area"></div>
             </div>
         </div>
     </header>

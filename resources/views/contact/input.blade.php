@@ -5,7 +5,7 @@
 <!-- styles -->
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
 
-<!-- scripts -->
+<!-- script -->
 <script src="{{ asset('js/contact.js') }}" defer></script>
 
 <nav aria-label="breadcrumb">
@@ -121,7 +121,7 @@
             </div>
             <div class="form-group row justify-content-end">
                 <div class="col-md-8">
-                    <button type="submit" class="btn btn-primary" id="input_check">確認する</button>
+                    <button type="submit" class="btn btn-primary">確認する</button>
                 </div>
             </div>
         </form>

@@ -28,6 +28,7 @@ class ContactController extends Controller
         $this->validate($request, Contact::$rules);
         
         $item = $request->all();
+
         $contact_courses = $item["contact_course"];
 
         $contact_course = implode(',', $contact_courses);
@@ -51,6 +52,8 @@ class ContactController extends Controller
     {
         $contact = new Contact;
 
+        $request->session()->regenerateToken();
+
         $item = [];
         $item = $request->all();
 
@@ -59,7 +62,7 @@ class ContactController extends Controller
         $contact->fill($item);
         $contact->save();
 
-        redirect('contact/complete');
+        return redirect('contact/complete');
     }
     public function complete(Request $request)
     {

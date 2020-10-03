@@ -2,9 +2,6 @@
 
 @section('content')
 
-<!-- scripts -->
-<script src="{{ asset('js/contact.js') }}" defer></script>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb container">
         <li class="breadcrumb-item">
@@ -51,8 +48,8 @@
                 </tbody>
             </table>
             <div class="form-group row justify-content-center">
-                <button type="submit" class="btn btn-primary mr-5" id="check_send">送信する</button>
-                <button type="button" class="btn btn-primary" onclick="history.back()">　戻る　</button>
+                <button type="button" class="btn btn-primary mr-5" onclick="history.back()">　戻る　</button>
+                <button type="submit" class="btn btn-primary">送信する</button>
             </div>
         </form>
     </div>

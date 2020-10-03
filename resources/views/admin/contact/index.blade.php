@@ -3,6 +3,11 @@
 @section('title' , '問い合わせ一覧')
 
 @section('content')
+
+<!-- script -->
+
+
+
     <div class="container">
         <div class="row">
             <h2>お問い合わせ一覧</h2>
@@ -32,9 +37,10 @@
                                     <td>{{ $item->contact_area }}</td>
                                     <td>{{ $item->contact_message }}</td>
                                     <td>
-                                        <div>
-                                            <a href="{{ action('Admin\ContactController@delete', ['id' => $item->id]) }}">削除</a>
-                                        </div>
+                                        <form action="{{ action('Admin\ContactController@delete', ['id' => $item->id]) }}" method="post">
+                                        @csrf
+                                            <input type="submit" name="delete" value="削除" onClick="delete_alert(event);return false;">
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

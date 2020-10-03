@@ -12,10 +12,3 @@ $(function(){
    }); 
 });
 
-$('#input_check').on('click', function () {
-  $(this).css('pointer-events','none');
-});
-
-$('#check_send').on('click', function () {
-   $(this).css('pointer-events','none');
- });

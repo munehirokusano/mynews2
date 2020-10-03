@@ -81,68 +81,39 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/sns.js":
-/*!*****************************!*\
-  !*** ./resources/js/sns.js ***!
-  \*****************************/
+/***/ "./resources/js/admin_contact.js":
+/*!***************************************!*\
+  !*** ./resources/js/admin_contact.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// SNSボタンを追加するエリア
-var snsArea = document.getElementById('sns-area'); // シェア時に使用する値
+function delete_alert(e) {
+  console.log('delete.alert');
 
-var shareUrl = 'http://cly7796.net/wp/'; // 現在のページURLを使用する場合 location.href;
+  if (!window.confirm('本当に削除しますか？')) {
+    window.alert('キャンセルされました');
+    return false;
+  }
 
-var shareText = 'cly7796.netのトップページです。'; // 現在のページタイトルを使用する場合 document.title;
-
-generate_share_button(snsArea, shareUrl, shareText); // シェアボタンを生成する関数
-
-function generate_share_button(area, url, text) {
-  // シェアボタンの作成
-  var twBtn = document.createElement('div');
-  twBtn.className = 'twitter-btn';
-  var fbBtn = document.createElement('div');
-  fbBtn.className = 'facebook-btn';
-  var liBtn = document.createElement('div');
-  liBtn.className = 'line-btn'; // 各シェアボタンのリンク先
-
-  var twHref = 'https://twitter.com/share?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
-  var fbHref = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(url);
-  var liHref = 'https://line.me/R/msg/text/?' + encodeURIComponent(text) + ' ' + encodeURIComponent(url); // シェアボタンにリンクを追加
-
-  var clickEv = 'onclick="popupWindow(this.href); return false;"';
-  var twLink = '<a href="' + twHref + '" ' + clickEv + '><img src="/images/Twitter_Social_Icon_Circle_Color.png" width="10%" class="img-fluid" alt="ツイッターロゴ"></a>';
-  var fbLink = '<a href="' + fbHref + '" ' + clickEv + '>facebook</a>';
-  var liLink = '<a href="' + liHref + '" target="_blank">line</a>';
-  twBtn.innerHTML = twLink;
-  fbBtn.innerHTML = fbLink;
-  liBtn.innerHTML = liLink; // シェアボタンを表示
-
-  area.appendChild(twBtn);
-  area.appendChild(fbBtn);
-  area.appendChild(liBtn);
-} // クリック時にポップアップで表示させる関数
-
-
-function popupWindow(url) {
-  window.open(url, '', 'width=580,height=400,menubar=no,toolbar=no,scrollbars=yes');
+  document.deleteform.submit();
 }
 
 /***/ }),
 
-/***/ 1:
-/*!***********************************!*\
-  !*** multi ./resources/js/sns.js ***!
-  \***********************************/
+/***/ 3:
+/*!*********************************************!*\
+  !*** multi ./resources/js/admin_contact.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\sns.js */"./resources/js/sns.js");
+module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\admin_contact.js */"./resources/js/admin_contact.js");
 
 
 /***/ })
