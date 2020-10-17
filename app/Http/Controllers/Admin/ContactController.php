@@ -26,8 +26,8 @@ class ContactController extends Controller
     public function delete(Request $request)
     {
         $contact = Contact::find($request->input('id'));
-        // $contact->delete();
+        $contact->delete();
 
         return redirect('admin/contact/');
-  }
+    }
 }

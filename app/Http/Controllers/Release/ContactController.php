@@ -16,7 +16,7 @@ class ContactController extends Controller
 
     public function input()
     {
-        return view('contact.input');
+        return view('release.contact.input');
     }
 
     public function check(Request $request)
@@ -41,7 +41,7 @@ class ContactController extends Controller
 
         unset($item['_token']);
 
-        return view('contact.check', [
+        return view('release.contact.check', [
             'item'=> $item ,
             'contact_course'=> $contact_course ,
             'contact_area'=> $contact_area
@@ -62,10 +62,10 @@ class ContactController extends Controller
         $contact->fill($item);
         $contact->save();
 
-        return redirect('contact/complete');
+        return redirect('release/contact/complete');
     }
     public function complete(Request $request)
     {
-        return view('contact.complete');
+        return view('release.contact.complete');
     }
 }

@@ -2,11 +2,17 @@
 
 namespace App;
 
+/*
+|-------------------------------------------------------------------------
+| 論理削除の追記
+|-------------------------------------------------------------------------
+ */
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contact extends Model
 {
+    // 論理削除
     use SoftDeletes;
 
     protected $table = 'contacts';

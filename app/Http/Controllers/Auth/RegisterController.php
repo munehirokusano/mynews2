@@ -37,7 +37,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
+        //元は $this->middleware('guest');
     }
 
     /**
@@ -69,4 +70,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    // 自動ログインをしない
+    // public function register(Request $request)
+    // {
+    //     $this->validator($request->all())->validate();
+
+    //     event(new Registered($user = $this->create($request->all())));
+
+    //     \Auth::logout();
+
+    //     return $this->registered($request, $user)
+    //                     ?: redirect($this->redirectPath());
+    // }
 }
