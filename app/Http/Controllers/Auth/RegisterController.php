@@ -23,12 +23,15 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    // このディレクトリで自動ログインをコメントアウトC:\work\mynews2\vendor\laravel\framework\src\Illuminate\Foundation\Auth\RegistersUsers.php
+
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = ('admin');
+    // 元は/home
 
     /**
      * Create a new controller instance.
@@ -71,7 +74,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    // 自動ログインをしない
+    // // 自動ログインをしない
     // public function register(Request $request)
     // {
     //     $this->validator($request->all())->validate();
