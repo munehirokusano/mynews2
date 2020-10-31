@@ -142,7 +142,7 @@ function popupWindow(url) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\sns.js */"./resources/js/sns.js");
+module.exports = __webpack_require__(/*! C:\Users\mks09\mynews2\resources\js\sns.js */"./resources/js/sns.js");
 
 
 /***/ })

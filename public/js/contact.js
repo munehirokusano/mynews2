@@ -116,7 +116,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\contact.js */"./resources/js/contact.js");
+module.exports = __webpack_require__(/*! C:\Users\mks09\mynews2\resources\js\contact.js */"./resources/js/contact.js");
 
 
 /***/ })

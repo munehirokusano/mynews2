@@ -113,7 +113,7 @@ function delete_alert(e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\work\mynews2\resources\js\admin_contact.js */"./resources/js/admin_contact.js");
+module.exports = __webpack_require__(/*! C:\Users\mks09\mynews2\resources\js\admin_contact.js */"./resources/js/admin_contact.js");
 
 
 /***/ })

@@ -8,7 +8,7 @@
 .jumbotron {
   height: 500px;
   width: 960px;
-  background-image: url(/images/sign.png?65b2af999fe972409508b445be2252bd);
+  background-image: url("/public/images/sign.png");
 }
 
 .sub-title {

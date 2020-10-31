@@ -8,7 +8,7 @@ src: url('https://cdn.leafscape.be/Harenosora/harenosora_web.woff2')
 .jumbotron { 
     height: 500px;
     width: 960px;
-    background-image: url(image/sign.png);
+    background-image: url('/public/images/sign.png');
     // background-size: contain;
 }
 .sub-title {
