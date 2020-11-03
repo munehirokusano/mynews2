@@ -11,7 +11,7 @@
     
     <div class="container">
         <div class="text-center">
-            <img src="{{ asset('images/sign.png') }}" class="img-fluid" alt="タイトル画面">
+            <img src="{{ config('app.image_path.top_image') }}" class="img-fluid" alt="タイトル画面">
         </div>
     </div>
     <div class="py-4">

@@ -44,6 +44,12 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
+                                    <form action="{{ action('Admin\UserController@roleup', ['id' => $user->id]) }}" method="post">
+                                    @csrf
+                                        <input type="submit" name="roleup" value="管理者権限" onClick="confirm('管理者権限を付与しますか？');return true;">
+                                    </form>
+                                </td>
+                                <td>
                                     <form action="{{ action('Admin\UserController@delete', ['id' => $user->id]) }}" method="post">
                                     @csrf
                                         <input type="submit" name="delete" value="削除" onClick="confirm('本当に削除してもよろしいですか？');return true;">

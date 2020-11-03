@@ -227,5 +227,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
+    'image_path' => [
+        'top_image' => env('IMAGE_PATH_TOPIMAGE'), 
+    ]
 ];

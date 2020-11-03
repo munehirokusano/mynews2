@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']]
     Route::get('user/create', 'Admin\UserController@add');
     Route::get('user', 'Admin\UserController@index')->name('admin.user');
     Route::post('user/delete', 'Admin\UserController@delete');
+    Route::post('user/roleup', 'Admin\UserController@roleup');
 
     Route::get('contact/create', 'Admin\ContactController@add');
     Route::get('contact', 'Admin\ContactController@index')->name('admin.contact');

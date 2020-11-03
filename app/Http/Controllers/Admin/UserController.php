@@ -37,4 +37,19 @@ class UserController extends Controller
 
         return redirect('admin/user/');
     }
+
+    //管理者権限の付与
+    public function roleup(Request $request)
+    {
+        $user_id = $request->input('id');
+        $roleup_user = User::find($user_id);
+
+        // $roleup_user->fill(['role'=> 5]);
+        $roleup_user->role = 5;
+        $roleup_user->save();
+
+        $roleup_user = User::find($request->input('id'));
+
+        // return redirect('admin/user/');
+    }
 }
