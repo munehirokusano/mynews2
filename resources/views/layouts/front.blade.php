@@ -24,10 +24,10 @@
         <div class="container">
             <div class="row justify-contentspace-between pt-2 align-items-center">
                 <div class="col-md-4 logo-image mb-2">
-                    <img src="{{ asset('images/askarogo.jpg') }}" alt="ロゴ">
+                    <img src="{{ config('app.image_path.logo_image') }}" alt="ロゴ">
                 </div>
                 <div class="col-md-4 main-title mb-2">
-                    <h1>ASKASPORTSCLUB</h1>
+                    <h1>{{ config('app.name_path.office_name') }}</h1>
                 </div>
                 <div class="col-md-4 mb-2">
                     <div id="sns-area"></div>
@@ -138,7 +138,7 @@
             <a href="https://www.jpnsport.go.jp/">
                 <img src="{{ asset('images/hp_banner_yoko.jpg') }}" class="img-fluid" alt="フッターロゴ">
             </a>
-            <p class="mt-3"><span class="border-top"><small>ASKSスポーツクラブ TEL:〇〇〇 MAIL:〇〇〇</small></span></p>
+            <p class="mt-3"><span class="border-top"><small>〇〇スポーツクラブ TEL:〇〇〇 MAIL:〇〇〇</small></span></p>
         </div>
     </footer>    
 </html>

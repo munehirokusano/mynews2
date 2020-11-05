@@ -229,5 +229,12 @@ return [
     ],
     'image_path' => [
         'top_image' => env('IMAGE_PATH_TOPIMAGE'), 
-    ]
+        'logo_image' =>env('IMAGE_PATH_LOGO'),
+    ],
+    'name_path' => [
+        'office_name' => env('NAME_PATH_OFFICENAME'),
+    ],
+    'video_path' => [
+        'video_sample' => env('VIDEO_PATH_SAMPLE'),
+    ],
 ];
