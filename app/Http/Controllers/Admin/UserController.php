@@ -50,6 +50,6 @@ class UserController extends Controller
 
         $roleup_user = User::find($request->input('id'));
 
-        // return redirect('admin/user/');
+        return redirect('admin/user/');
     }
 }

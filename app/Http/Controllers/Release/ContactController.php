@@ -33,11 +33,13 @@ class ContactController extends Controller
 
         $contact_course = implode(',', $contact_courses);
         
-        if ($item["contact_area"] == 6) {
-            $contact_area = $item["contact_text"];
-        } else {
-            $contact_area = $item["contact_area"];
-        }
+        // if ($item["contact_area"] == 6) {
+        //     $contact_area = $item["contact_text"];
+        // } else {
+        //     $contact_area = $item["contact_area"];
+        // }
+
+        $item["contact_area"] == 6 ? $contact_area = $item["contact_text"] : $contact_area = $item["contact_area"];
 
         unset($item['_token']);
 

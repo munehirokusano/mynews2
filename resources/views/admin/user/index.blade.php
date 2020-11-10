@@ -31,10 +31,11 @@
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th width="25%">ID</th>
-                            <th width="25%">名前</th>
-                            <th width="25%">email</th>
-                            <th width="25%">操作</th>
+                            <th width="10%">ID</th>
+                            <th width="20%">名前</th>
+                            <th width="20%">email</th>
+                            <th width="25%">管理者</th>
+                            <th width="25%">ユーザー操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,9 +45,14 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
+                                    @if ($user->role==5)
+                                        管理者
+                                    @endif
+                                </td>
+                                <td>
                                     <form action="{{ action('Admin\UserController@roleup', ['id' => $user->id]) }}" method="post">
                                     @csrf
-                                        <input type="submit" name="roleup" value="管理者権限" onClick="confirm('管理者権限を付与しますか？');return true;">
+                                        <input type="submit" name="roleup" value="管理者権限付与" onClick="confirm('管理者権限を付与しますか？');return true;">
                                     </form>
                                 </td>
                                 <td>
