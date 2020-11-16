@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    <h3>News</h3>
+                    <h3>Informtion</h3>
                 </div>
                 <div class="col-md-10">
                     <dl class="row">
@@ -26,6 +26,17 @@
                         <dd class="col-md-9">新型コロナウイルスについて</dd>
                         <dt class="col-md-3">2019年8月28日</dt>
                         <dd class="col-md-9">営業時間短縮について</dd>
+                    </dl>
+                </div>
+                <div class="col-md-2">
+                    <h3>News</h3>
+                </div>
+                <div class="col-md-10">
+                    <dl class="row">
+                        @foreach($news_headlines as $news_headline)
+                            <dt class="col-md-3">{{ $news_headline->updated_at }}</dt>
+                            <dd class="col-md-9">{{ $news_headline->title }}</dd>
+                        @endforeach
                     </dl>
                 </div>
             </div>

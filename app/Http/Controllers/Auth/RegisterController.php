@@ -33,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = ('admin');
+    protected $redirectTo = ('/admin');
     // 元は/home
 
     /**

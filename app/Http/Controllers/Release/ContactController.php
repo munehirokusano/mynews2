@@ -21,10 +21,6 @@ class ContactController extends Controller
 
     public function check(Request $request)
     {
-        $item = [];
-        $contact_courses = [];
-        $contact_area = null;
-
         $this->validate($request, Contact::$rules);
         
         $item = $request->all();
@@ -39,7 +35,7 @@ class ContactController extends Controller
         //     $contact_area = $item["contact_area"];
         // }
 
-        $item["contact_area"] == 6 ? $contact_area = $item["contact_text"] : $contact_area = $item["contact_area"];
+        $contact_area = $item["contact_area"] == 6 ? $item["contact_text"] : $item["contact_area"];
 
         unset($item['_token']);
 
@@ -56,7 +52,6 @@ class ContactController extends Controller
 
         $request->session()->regenerateToken();
 
-        $item = [];
         $item = $request->all();
 
         unset($item['_token']);
@@ -64,7 +59,7 @@ class ContactController extends Controller
         $contact->fill($item);
         $contact->save();
 
-        return redirect('release/contact/complete');
+        return redirect('contact/complete');
     }
     public function complete(Request $request)
     {

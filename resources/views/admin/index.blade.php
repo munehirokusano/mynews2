@@ -26,6 +26,15 @@
                 </div>
             </div>
         </div> 
+        <div class="col-md-4">
+            <div class="card bg-primary mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">ニュース一覧</h4>
+                    <p class="card-text">ニュースを作成する画面です。</p>
+                    <a href="{{ route('admin.news') }}" class="btn btn-light">作成</a>
+                </div>
+            </div>
+        </div>
     </div> 
 </div>
 @endsection
