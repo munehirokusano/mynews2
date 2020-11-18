@@ -15,12 +15,7 @@
 //     return view('welcome');
 // });
 
-/*
-|-------------------------------------------------------------------------
-| 公開ページ
-|-------------------------------------------------------------------------
- */
-
+// 公開ページ
 Route::get('/', 'Release\TopPageController@index')->name('topPage');
 
 Route::group(['prefix' => 'contact'], function () {
@@ -30,12 +25,7 @@ Route::group(['prefix' => 'contact'], function () {
     Route::get('complete', 'Release\ContactController@complete');
 });
 
-/*
-|-------------------------------------------------------------------------
-| 閲覧制限 開発者: system-only=9, 管理者: admin-higher=5, 一般ユーザー: user-higher=0 
-|-------------------------------------------------------------------------
- */
-
+// 閲覧制限 開発者: system-only=9, 管理者: admin-higher=5, 一般ユーザー: user-higher=0 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']], function () {
 
     Route::get('/', 'Admin\TopPageController@index');
@@ -58,21 +48,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']]
 
 });
 
-/*
-閲覧制限の解除
-Route::group(['prefix' => 'admin'], function () {
-*/
+// 閲覧制限の解除用
+// Route::group(['prefix' => 'admin'], function () {
 
-/*
-|-------------------------------------------------------------------------
-| 認証関係
-|-------------------------------------------------------------------------
- */
+// 認証関係
 
-/*
-認証の初期状態
-Auth::routes();
-*/
+// 認証の初期状態
+// Auth::routes();
  
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -83,20 +65,14 @@ Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail
 Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
  
-/*
-管理者以上でユーザー登録可能
- */
+
+// 管理者以上でユーザー登録可能
 Route::group(['middleware' => ['auth', 'can:admin-higher']], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register');
 });
 
-/*
-|-------------------------------------------------------------------------
-| 未使用のルート
-|-------------------------------------------------------------------------
- */
-
+// 未使用のルート
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'Release\ProfileController@index');

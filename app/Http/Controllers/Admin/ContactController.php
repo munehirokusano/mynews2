@@ -14,6 +14,7 @@ class ContactController extends Controller
         return view('admin.contact.create');
     }
 
+    // 問い合わせ管理者ページの表示
     public function index(Request $request)
     {
         $items = Contact::all();
@@ -23,6 +24,7 @@ class ContactController extends Controller
             ]);
     }
 
+    // 問い合わせの削除
     public function delete(Request $request)
     {
         $contact = Contact::find($request->input('id'));

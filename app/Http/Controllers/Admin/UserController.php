@@ -14,6 +14,7 @@ class UserController extends Controller
         return view('admin.user.create');
     }
 
+    // ユーザー一覧の表示
     public function index(Request $request)
     {
         $cond_name = $request->cond_name;
@@ -30,6 +31,7 @@ class UserController extends Controller
             ]);
     }
 
+    // ユーザーの削除
     public function delete(Request $request)
     {
         $contact = User::find($request->input('id'));

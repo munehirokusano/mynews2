@@ -14,11 +14,13 @@ class TopPageController extends Controller
     {
         $minutes = 10;
 
+        // キャッシュさせて表示を早くする。データベースにアクセスしない。
         $posts = Cache::remember(__METHOD__, $minutes, function () {
             return News::all()->sortByDesc('updated_at');
         });
 
         $i = 0;
+        // ニュースを三件まで追加
         $news_headlines = [];
         
         foreach ($posts as $post) {

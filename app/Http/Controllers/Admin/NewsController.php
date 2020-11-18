@@ -18,6 +18,7 @@ class NewsController extends Controller
         return view('admin.news.create');
     }
     
+    // 記事の作成
     public function create(Request $request)
     {
         $this->validate($request, News::$rules);
@@ -39,6 +40,7 @@ class NewsController extends Controller
         return redirect('admin/news/create');
     }
 
+    // 記事の表示
     public function index(Request $request)
     {
         $cond_title = $request->cond_title;
@@ -50,6 +52,7 @@ class NewsController extends Controller
         return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
+    // 記事の編集
     public function edit(Request $request)
     {
         $news = News::find($request->id);
@@ -59,6 +62,7 @@ class NewsController extends Controller
         return view('admin.news.edit', ['news_form' => $news]);
     }
     
+    // 記事の更新
     public function update(Request $request)
     {
         $this->validate($request, News::$rules);
@@ -86,6 +90,7 @@ class NewsController extends Controller
         return redirect('admin/news/');
     }
     
+    // 記事の削除
     public function delete(Request $request)
     {
         $news = News::find($request->id);

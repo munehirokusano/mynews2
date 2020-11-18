@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 class NewsController extends Controller
 {
+    // 記事表示
     public function index()
     {
         return view('news.index');

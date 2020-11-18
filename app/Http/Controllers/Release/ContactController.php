@@ -13,12 +13,12 @@ class ContactController extends Controller
     {
         
     }
-
+    // 問い合わせ入力
     public function input()
     {
         return view('release.contact.input');
     }
-
+    // 問い合わせ確認
     public function check(Request $request)
     {
         $this->validate($request, Contact::$rules);
@@ -46,6 +46,7 @@ class ContactController extends Controller
             ]);
     }
 
+    // 問い合わせ作成
     public function create(Request $request)
     {
         $contact = new Contact;
@@ -61,6 +62,8 @@ class ContactController extends Controller
 
         return redirect('contact/complete');
     }
+
+    // 問い合わせ完了
     public function complete(Request $request)
     {
         return view('release.contact.complete');
