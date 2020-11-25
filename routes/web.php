@@ -25,6 +25,12 @@ Route::group(['prefix' => 'contact'], function () {
     Route::get('complete', 'Release\ContactController@complete');
 });
 
+Route::group(['prefix' => 'news'], function () {
+    Route::get('index', 'Release\NewsController@index')->name('newsIndex');
+    Route::get('display/{id}', 'Release\NewsController@display');
+    // display->articles
+});
+
 // 閲覧制限 開発者: system-only=9, 管理者: admin-higher=5, 一般ユーザー: user-higher=0 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']], function () {
 

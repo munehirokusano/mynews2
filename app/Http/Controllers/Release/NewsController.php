@@ -5,13 +5,36 @@ namespace App\Http\Controllers\Release;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Cache;
+use App\News;
+
+
 class NewsController extends Controller
 {
-    // 記事表示
+    // 記事一覧表示
     public function index()
     {
-        return view('news.index');
+        $minutes = 10;
+
+        // キャッシュさせて表示を早くする。データベースにアクセスしない。
+        $posts = Cache::remember(__METHOD__, $minutes, function () {
+            return News::all()->sortByDesc('updated_at');
+        });
+
+        return view('release.news.index', [
+            'posts' => $posts,
+        ]);
     }
+
+    public function display($id)
+    {
+        $post = News::find($id);
+
+        return view('release.news.display', [
+            'post' => $post,
+        ]);
+    }
+
 //     /**
 //     public function index(Request $request)
 //     {

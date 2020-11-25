@@ -34,7 +34,7 @@
                 <div class="col-md-10">
                     <dl class="row">
                         @foreach($news_headlines as $news_headline)
-                            <dt class="col-md-3">{{ $news_headline->updated_at }}</dt>
+                            <dt class="col-md-3">{{ $news_headline->updated_at->format('Y年m月d日') }}</dt>
                             <dd class="col-md-9">{{ $news_headline->title }}</dd>
                         @endforeach
                     </dl>
