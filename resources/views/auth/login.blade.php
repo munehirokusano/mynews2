@@ -8,7 +8,6 @@
                 <div class="login-header card-header mx-auto">{{ __('messages.Login') }}</div>  <!-- 変更箇所 -->
                 <div class="login-body card-body">  <!-- 変更箇所 -->
                     <form method="POST" action="{{ route('login') }}">
-
                         @csrf
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>  <!-- 変更箇所 -->
@@ -40,7 +39,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">  <!-- 変更箇所 -->
                                     <label> <!-- 変更箇所 -->
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('messages.Remember Me') }} <!-- 変更箇所 -->
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }} <!-- 変更箇所 -->
                                     </label>
                                 </div>
                             </div>

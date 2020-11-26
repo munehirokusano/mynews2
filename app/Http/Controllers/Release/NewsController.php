@@ -25,12 +25,12 @@ class NewsController extends Controller
             'posts' => $posts,
         ]);
     }
-
-    public function display($id)
+    // idから記事を検索して表示
+    public function articles($id)
     {
         $post = News::find($id);
 
-        return view('release.news.display', [
+        return view('release.news.articles', [
             'post' => $post,
         ]);
     }

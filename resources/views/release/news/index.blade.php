@@ -22,7 +22,7 @@
                         <p>{{ $post->updated_at->format('Y年m月d日') }}</p>
                     </div>
                     <div class="col-9">
-                        <a href="/news/display/{{ $post->id }}">{{ $post->title }}</a>
+                        <a href="/news/articles/{{ $post->id }}">{{ $post->title }}</a>
                     </div>
                 </li>
             @endforeach           

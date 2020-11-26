@@ -27,7 +27,7 @@ Route::group(['prefix' => 'contact'], function () {
 
 Route::group(['prefix' => 'news'], function () {
     Route::get('index', 'Release\NewsController@index')->name('newsIndex');
-    Route::get('display/{id}', 'Release\NewsController@display');
+    Route::get('articles/{id}', 'Release\NewsController@articles');
     // display->articles
 });
 
