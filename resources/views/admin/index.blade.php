@@ -35,6 +35,15 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="card bg-primary mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">お知らせ一覧</h4>
+                    <p class="card-text">お知らせを作成する画面です。</p>
+                    <a href="{{ route('admin.information') }}" class="btn btn-light">作成</a>
+                </div>
+            </div>
+        </div>
     </div> 
 </div>
 @endsection

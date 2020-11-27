@@ -18,16 +18,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    <h3>Informtion</h3>
+                    <h3><a href="{{ route('informationIndex') }}">Informtion</a></h3>
                 </div>
                 <div class="col-md-10">
                     <dl class="row">
-                        <dt class="col-md-3">最新記事</dt>
-                        <dd class="col-md-9">新型コロナウイルスについて</dd>
-                        <dt class="col-md-3">2019年8月28日</dt>
-                        <dd class="col-md-9">営業時間短縮について</dd>
+                        @foreach($information_headlines as $information_headline)
+                            <dt class="col-md-3">{{ $information_headline->updated_at->format('Y年m月d日') }}</dt>
+                            <dd class="col-md-9">{{ $information_headline->title }}<br><a href="/information_headline/articles/{{ $information_headline->id }}">詳しく見る</a></dd>
+                        @endforeach
                     </dl>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-md-2">
                     <h3><a href="{{ route('newsIndex') }}">News</a></h3>
                 </div>
