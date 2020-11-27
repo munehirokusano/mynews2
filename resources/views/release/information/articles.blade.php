@@ -10,8 +10,8 @@
         {{ str_limit($post->title, 150) }}
     </div>
     <div class="image">
-        @if ($post->image_path)
-        <img src="{{ $post->image_path }}">
+        @if ($post->file_path)
+            <a href="{{ $post->file_path }}">ファイルを表示する</a>
         @endif
     </div>
     <div class="body mt-3">

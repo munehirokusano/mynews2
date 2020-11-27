@@ -28,7 +28,11 @@ Route::group(['prefix' => 'contact'], function () {
 Route::group(['prefix' => 'news'], function () {
     Route::get('index', 'Release\NewsController@index')->name('newsIndex');
     Route::get('articles/{id}', 'Release\NewsController@articles');
-    // display->articles
+});
+
+Route::group(['prefix' => 'information'], function () {
+    Route::get('index', 'Release\InformationController@index')->name('informationIndex');
+    Route::get('articles/{id}', 'Release\InformationController@articles');
 });
 
 // 閲覧制限 開発者: system-only=9, 管理者: admin-higher=5, 一般ユーザー: user-higher=0 
@@ -52,6 +56,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']]
     Route::post('news/create', 'Admin\NewsController@create');
     Route::post('news/edit', 'Admin\NewsController@update');
 
+    Route::get('information/create', 'Admin\InformationController@add');
+    Route::get('information/delete', 'Admin\InformationController@delete');
+    Route::get('information/edit', 'Admin\InformationController@edit');
+    Route::get('information', 'Admin\InformationController@index')->name('admin.information');
+    Route::post('information/create', 'Admin\InformationController@create');
+    Route::post('information/edit', 'Admin\InformationController@update');
 });
 
 // 閲覧制限の解除用
