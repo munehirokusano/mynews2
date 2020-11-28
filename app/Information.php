@@ -14,4 +14,9 @@ class Information extends Model
         'title' => 'required',
         'body' => 'required',
     );
+
+    public function informationHistories()
+    {
+      return $this->hasMany('App\InformationHistory');
+    }
 }

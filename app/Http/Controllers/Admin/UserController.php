@@ -14,17 +14,20 @@ class UserController extends Controller
         return view('admin.user.create');
     }
 
-    // ユーザー一覧の表示
+    // ユーザー一覧の表示(システム管理者を除く)
     public function index(Request $request)
     {
+        $users = User::where('role', '!=', 9)->get();
+
         $cond_name = $request->cond_name;
         if ($cond_name != '') {
             // 検索されたら検索結果を取得する
-            $users = User::where('name', 'like', '%'.$cond_name.'%')->get();
+            $users = User::where('role', '!=', 9)->where('name', 'like', '%'.$cond_name.'%')->get();
         } else {
             // それ以外はすべてのユーザーを取得する
-            $users = User::all();
+            $users = User::where('role', '!=', 9)->get();
         }
+        
         return view('admin.user.index', [
             'users' => $users,
             'cond_name' => $cond_name

@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 use App\Information;
 use Storage;
+use App\InformationHistory;
+use Carbon\Carbon;
 
 class InformationController extends Controller
 {
@@ -79,6 +81,11 @@ class InformationController extends Controller
         unset($information_form['_token']);
 
         $information->fill($information_form)->save();
+
+        $informationHistories = new InformationHistory;
+        $informationHistories->information_id = $information->id;
+        $informationHistories->edited_at = Carbon::now();
+        $informationHistories->save();
 
         return redirect('admin/information');
     }
