@@ -18,7 +18,7 @@ class NewsController extends Controller
 
         // キャッシュさせて表示を早くする。データベースにアクセスしない。
         $posts = Cache::remember(__METHOD__, $minutes, function () {
-            return News::all()->sortByDesc('updated_at');
+            return News::orderBy('updated_at', 'desc')->paginate(2);
         });
 
         return view('release.news.index', [

@@ -24,7 +24,7 @@
                     <dl class="row">
                         @foreach($information_headlines as $information_headline)
                             <dt class="col-md-3">{{ $information_headline->updated_at->format('Y年m月d日') }}</dt>
-                            <dd class="col-md-9">{{ $information_headline->title }}<br><a href="/information_headline/articles/{{ $information_headline->id }}">詳しく見る</a></dd>
+                            <dd class="col-md-9">{{ $information_headline->title }}<br><a href="/information/articles/{{ $information_headline->id }}">詳しく見る</a></dd>
                         @endforeach
                     </dl>
                 </div>

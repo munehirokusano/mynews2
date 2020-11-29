@@ -25,7 +25,8 @@
                         <a href="/information/articles/{{ $post->id }}">{{ $post->title }}</a>
                     </div>
                 </li>
-            @endforeach           
+            @endforeach 
+                {{ $posts->links() }}         
             </tbody>
         </ul>     
     </div>

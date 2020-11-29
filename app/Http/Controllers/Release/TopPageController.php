@@ -33,10 +33,6 @@ class TopPageController extends Controller
             $i++;
         }
 
-        // informationのheadline
-        $minutes = 10;
-
-        // キャッシュさせて表示を早くする。データベースにアクセスしない。
         $information_posts =  Information::all()->sortByDesc('updated_at');
 
         $i = 0;

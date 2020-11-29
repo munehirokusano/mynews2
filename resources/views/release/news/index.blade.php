@@ -25,8 +25,10 @@
                         <a href="/news/articles/{{ $post->id }}">{{ $post->title }}</a>
                     </div>
                 </li>
-            @endforeach           
-            </tbody>
+            @endforeach
+            <div class ="mt-3">
+                {{ $posts->links() }}
+            </div>       
         </ul>     
     </div>
 </div>

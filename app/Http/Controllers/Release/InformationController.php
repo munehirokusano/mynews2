@@ -17,8 +17,11 @@ class InformationController extends Controller
 
         // キャッシュさせて表示を早くする。データベースにアクセスしない。
         $posts = Cache::remember(__METHOD__, $minutes, function () {
-            return Information::all()->sortByDesc('updated_at');
+            return Information::orderBy('updated_at', 'desc')->paginate(2);
         });
+
+        // 日付の挙動がわからない。
+        // $posts = DB::table('informations')->simplePaginate(1);
 
         return view('release.information.index', [
             'posts' => $posts,
