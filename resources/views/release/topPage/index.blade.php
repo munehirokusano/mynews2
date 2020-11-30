@@ -9,10 +9,8 @@
 <!-- styles -->
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     
-    <div class="container">
-        <div class="text-center">
-            <img src="{{ config('app.image_path.top_image') }}" class="img-fluid" alt="タイトル画面">
-        </div>
+    <div class="row no-gutters justify-content-center">
+        <img src="{{ config('app.image_path.top_image') }}" class="img-fluid" alt="タイトル画面">
     </div>
     <div class="py-4">
         <div class="container">
