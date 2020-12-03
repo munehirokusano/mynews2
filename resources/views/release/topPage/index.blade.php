@@ -46,77 +46,109 @@
         <div class="py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">新体操</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/image1.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">器械体操</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">体育ｸﾗｽ</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">極真空手</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">ｸﾗｼｯｸﾊﾞﾚｴ</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">大人のｸﾗｼｯｸﾊﾞﾚｴ</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">ﾀﾞﾝｽ・ﾁｱ</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="card mb-3">
-                            <img src="{{ asset('images/sample2.jpg') }}" class="img-fluid">
-                            <div class="card-body d-flex justify-content-between">
-                                <h4 class="card-title">健美操</h4>
-                                <button type="button" class="btn btn-secondary">詳しく見る</button>
+                            <div class="gymnastics_picture">
+                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
+                                <div class="gymnastics_body">
+                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
+                                </div>
+                                <div class="gymnastics_button">
+                                    <a class="card_button">詳細</a>
+                                </div>
                             </div>
                         </div>
                     </div>

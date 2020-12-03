@@ -107,18 +107,16 @@ function generate_share_button(area, url, text) {
   var twBtn = document.createElement('span');
   twBtn.className = 'twitter-btn';
   var fbBtn = document.createElement('span');
-  fbBtn.className = 'facebook-btn';
-  
+  fbBtn.className = 'facebook-btn'; // 各シェアボタンのリンク先
 
   var twHref = 'https://twitter.com/share?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
   var fbHref = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(url); // シェアボタンにリンクを追加
 
   var clickEv = 'onclick="popupWindow(this.href); return false;"';
-  var twLink = '<a href="' + twHref + '" ' + clickEv + '><img src="/images/Twitter_Social_Icon_Circle_Color.png" alt="ツイッターロゴ"></a>';
-  var fbLink = '<a href="' + fbHref + '" ' + clickEv + '><img src="/images/f_logo_RGB-Blue_1024.png" alt="フェイスブックロゴ"</a>';
-  
+  var twLink = '<a href="' + twHref + '" ' + clickEv + '><img src="/images/Twitter_Social_Icon_Circle_Color.png" class="img-fluid" alt="ツイッターロゴ"></a>';
+  var fbLink = '<a href="' + fbHref + '" ' + clickEv + '><img src="/images/f_logo_RGB-Blue_1024.png" class="img-fluid" alt="ファイスブックロゴ"></a>';
   twBtn.innerHTML = twLink;
-  fbBtn.innerHTML = fbLink;  // シェアボタンを表示
+  fbBtn.innerHTML = fbLink; // シェアボタンを表示
 
   area.appendChild(twBtn);
   area.appendChild(fbBtn);

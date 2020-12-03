@@ -38,10 +38,10 @@
     </header>
     <body>
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top py-2">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-2">
                 <div class="container">
                     <!-- <a class="navber-brand" href="#">menu</a> -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=#navbar-content aria-controls="navbar-content" aria-expanded="false" aria-label="toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbar-content">
