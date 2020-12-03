@@ -27,7 +27,8 @@
                     <img src="{{ config('app.image_path.logo_image') }}" alt="ロゴ">
                 </div>
                 <div class="col-md-4 main-title mb-2">
-                    <h1>{{ config('app.name_path.office_name') }}</h1>
+                    <img src="{{  config('app.image_path.title_logo') }}" class="img-fluid">
+
                 </div>
                 <div class="col-md-4 mb-2">
                     <div id="sns-area"></div>

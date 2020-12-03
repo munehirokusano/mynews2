@@ -59,7 +59,7 @@ class ContactController extends Controller
 
         $contact->fill($item);
         $contact->save();
-
+        
         return redirect('contact/complete');
     }
 

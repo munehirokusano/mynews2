@@ -104,9 +104,9 @@ generate_share_button(snsArea, shareUrl, shareText); // シェアボタンを生
 
 function generate_share_button(area, url, text) {
   // シェアボタンの作成
-  var twBtn = document.createElement('div');
+  var twBtn = document.createElement('span');
   twBtn.className = 'twitter-btn';
-  var fbBtn = document.createElement('div');
+  var fbBtn = document.createElement('span');
   fbBtn.className = 'facebook-btn';
   
 
