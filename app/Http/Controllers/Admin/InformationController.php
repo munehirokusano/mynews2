@@ -35,10 +35,10 @@ class InformationController extends Controller
         $information->fill($form);
         $information->save();
 
-        return redirect('admin/news/create');
+        return redirect('admin/information');
     }
 
-        public function index(Request $request)
+    public function index(Request $request)
     {
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
@@ -51,7 +51,7 @@ class InformationController extends Controller
         return view('admin.information.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
-        public function edit(Request $request)
+    public function edit(Request $request)
     {
         $information = Information::find($request->id);
         if (empty($information)) {
@@ -60,7 +60,7 @@ class InformationController extends Controller
         return view('admin.information.edit', ['information_form' => $information]);
     }
 
-        public function update(Request $request)
+    public function update(Request $request)
     {
         $this->validate($request, Information::$rules);
         
@@ -90,7 +90,7 @@ class InformationController extends Controller
         return redirect('admin/information');
     }
 
-        public function delete(Request $request)
+    public function delete(Request $request)
     {
         $information = Information::find($request->id);
         // 削除する

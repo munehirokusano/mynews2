@@ -32,16 +32,20 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">タイトル</th>
-                                <th width="50%">本文</th>
+                                <th width="70%">タイトル</th>
+                                <th width="20%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $information)
                                 <tr>
                                     <th>{{ $information->id }}</th>
-                                    <td>{{ \Str::limit($information->title, 100) }}</td>
-                                    <td>{{ \Str::limit($information->body, 250) }}</td>
+                                    <td>
+                                        <a href="{{ $information->file_path }}">{{ str_limit($information->title, 150) }}</a>
+                                        <span>    
+                                            <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
+                                        </span>
+                                    </td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\InformationController@edit', ['id' => $information->id]) }}">編集</a>

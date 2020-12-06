@@ -28,7 +28,6 @@
                 </div>
                 <div class="col-md-4 main-title mb-2">
                     <img src="{{  config('app.image_path.title_logo') }}" class="img-fluid">
-
                 </div>
                 <div class="col-md-4 mb-2">
                     <div id="sns-area"></div>
@@ -89,43 +88,6 @@
                             </li>
                         </ul>
                     </div>
-                    <ul class="head-navber mt-2">
-                        <li>
-                            <form method="get" action="http://www.google.co.jp/search" target="_blank">
-                                <input type="text" name="q" size="22" maxlength="255" value="">
-                                <input type="submit" name="btng" value="検索">
-                                <input type="hidden" name="hl" value="ja">
-                                <input type="hidden" name="sitesearch" value="ここにアドレス">
-                            </form>
-                        </li>
-                    </ul>
-
-
-
-                        <! -- Right Side of Navbar -->
-
-                        <!-- <ul class="navbar-nav ml-auto"> 
-                        Authentication Links
-                        </ul>
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                            @endguest -->
-                        <!-- </ul> -->
                 </div>
             </nav>
             {{--ここまでナビゲーションバー --}}

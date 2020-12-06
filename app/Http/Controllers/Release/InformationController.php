@@ -20,12 +20,9 @@ class InformationController extends Controller
             return Information::orderBy('updated_at', 'desc')->paginate(2);
         });
 
-        // 日付の挙動がわからない。
-        // $posts = DB::table('informations')->simplePaginate(1);
-
         return view('release.information.index', [
             'posts' => $posts,
-        ]);  
+        ]);
     }
 
     // idから記事を検索して表示

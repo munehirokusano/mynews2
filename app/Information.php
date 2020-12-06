@@ -8,16 +8,15 @@ class Information extends Model
 {
     protected $table = 'informations';
 
-    protected $dates = [ 
-      'created_at', 
-      'updated_at' 
+    protected $dates = [
+      'created_at',
+      'updated_at'
     ];
 
     protected $guarded = array('id');
 
     public static $rules = array(
         'title' => 'required',
-        'body' => 'required',
     );
 
     public function informationHistories()

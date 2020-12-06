@@ -12,19 +12,30 @@
     <div class="row no-gutters justify-content-center">
         <img src="{{ config('app.image_path.top_image') }}" class="img-fluid" alt="タイトル画面">
     </div>
-    <div class="py-4">
+    <div class="pt-4 pr-4 pl-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-2">
                     <h3><a href="{{ route('informationIndex') }}">Informtion</a></h3>
                 </div>
-                <div class="col-md-10">
-                    <dl class="row">
+                <div class="col-10">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-10">
+                    <ul>
                         @foreach($information_headlines as $information_headline)
-                            <dt class="col-md-3">{{ $information_headline->updated_at->format('Y年m月d日') }}</dt>
-                            <dd class="col-md-9">{{ $information_headline->title }}<br><a href="/information/articles/{{ $information_headline->id }}">詳しく見る</a></dd>
+                            <li>
+                                {{ $information_headline->updated_at->format('Y年m月d日') }}
+                                <span>
+                                {{ $information_headline->title }}<a href="/information/articles/{{ $information_headline->id }}">詳しく見る</a>
+                                </span>
+                            </li>
                         @endforeach
-                    </dl>
+                    </ul>
                 </div>
             </div>
             <div class="row">

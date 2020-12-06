@@ -2,13 +2,15 @@
 
 @section('content')
 
+<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb container">
         <li class="breadcrumb-item">
             <a href="/">top</a>
         </li>
         <li class="breadcrumb-item ative" aria-current="page">
-            News_index
+            News
         </li>
     <ol>
 </nav>

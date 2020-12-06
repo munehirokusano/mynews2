@@ -2,13 +2,15 @@
 
 @section('content')
 
+<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb container">
         <li class="breadcrumb-item">
             <a href="/">top</a>
         </li>
         <li class="breadcrumb-item ative" aria-current="page">
-            Information_index
+            Information
         </li>
     <ol>
 </nav>
@@ -22,7 +24,10 @@
                         <p>{{ $post->updated_at->format('Y年m月d日') }}</p>
                     </div>
                     <div class="col-9">
-                        <a href="/information/articles/{{ $post->id }}">{{ $post->title }}</a>
+                        <a href="{{ $post->file_path }}">{{ str_limit($post->title, 150) }}</a>
+                        <span>    
+                            <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
+                        </span>
                     </div>
                 </li>
             @endforeach 
