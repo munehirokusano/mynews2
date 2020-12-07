@@ -13,45 +13,52 @@
         <img src="{{ config('app.image_path.top_image') }}" class="img-fluid" alt="タイトル画面">
     </div>
     <div class="pt-4 pr-4 pl-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <h3><a href="{{ route('informationIndex') }}">Informtion</a></h3>
-                </div>
-                <div class="col-10">
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-2">
-                </div>
-                <div class="col-10">
-                    <ul>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr class="table-light">
+                            <th width="20%" scope="col">Informtion</th>
+                            <th width="60%" scope="col"></th>
+                            <th width="20%" scope="col"><a href="{{ route('informationIndex') }}">一覧表示</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         @foreach($information_headlines as $information_headline)
-                            <li>
-                                {{ $information_headline->updated_at->format('Y年m月d日') }}
-                                <span>
-                                {{ $information_headline->title }}<a href="/information/articles/{{ $information_headline->id }}">詳しく見る</a>
+                        <tr class="table-light">
+                            <th scope="row">{{ $information_headline->updated_at->format('Y年m月d日') }}</th>
+                            <td>
+                                <a href="{{ $information_headline->file_path }}">{{ str_limit($information_headline->title, 150) }}</a>
+                                <span>    
+                                    <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
                                 </span>
-                            </li>
+                                
+                            </td>
+                            <td></td>
+                        </tr>
                         @endforeach
-                    </ul>
-                </div>
+                    </tbody>
+                </table>
             </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <h3><a href="{{ route('newsIndex') }}">News</a></h3>
-                </div>
-                <div class="col-md-10">
-                    <dl class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr class="table-light">
+                            <th width="20%" scope="col">News</th>
+                            <th width="60%" scope="col"></th>
+                            <th width="20%" scope="col"><a href="{{ route('newsIndex') }}">一覧表示</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         @foreach($news_headlines as $news_headline)
-                            <dt class="col-md-3">{{ $news_headline->updated_at->format('Y年m月d日') }}</dt>
-                            <dd class="col-md-9">{{ $news_headline->title }}<br><a href="/news/articles/{{ $news_headline->id }}">詳しく見る</a></dd>
+                        <tr class="table-light">
+                            <th scope="row">{{ $news_headline->updated_at->format('Y年m月d日') }}</th>
+                            <td><a href="/news/articles/{{ $news_headline->id }}">{{ $news_headline->title }}</a></td>
+                            <td></td>
+                        </tr>
                         @endforeach
-                    </dl>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </div>
     </div>
     <div class="card-aria">
         <div class="py-4">
