@@ -59,120 +59,33 @@
         </table>
     </div>
 </div>
-    <div class="card-aria">
-        <div class="py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/image1.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card mb-3">
-                            <div class="gymnastics_picture">
-                                <img src="{{ asset('images/sample.jpg') }}"  class="img-fluid">
-                                <div class="gymnastics_body">
-                                    <img src="{{ asset('images/sample_card.png') }}" class="img-fluid">
-                                </div>
-                                <div class="gymnastics_button">
-                                    <a class="card_button">詳細</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--  card-area  --}}
+<div class="container">
+    <h2 class="movie-title">コース紹介</h2>
+    <div class="row">
+        <div class="col-auto mx-auto mb-3">
+            <div class="course_picture">
+                <img src="{{ asset('images/sanple5.jpg') }}">
+                <p class="course_title">新体操</p>
+                <a class="card_button">詳細</a>
             </div>
-        </div>  
+        </div>
+        <div class="col-auto mx-auto mb-3">
+            <div class="course_picture">
+                <img src="{{ asset('images/sanple5.jpg') }}">
+                <p class="course_title">新体操</p>
+                <a class="card_button">詳細</a>
+            </div>
+        </div>
+        <div class="col-auto mx-auto mb-3">
+            <div class="course_picture">
+                <img src="{{ asset('images/sanple5.jpg') }}">
+                <p class="course_title">新体操</p>
+                <a class="card_button">詳細</a>
+            </div>
+        </div>
     </div>
+</div>
     <div class="py-4">
         <div class="container">
             <div class="row mb-3">

@@ -97,5 +97,5 @@ class NewsController extends Controller
         
         $news->delete();
         return redirect('admin/news/');
-    }
+    }  
 }

@@ -5,12 +5,6 @@
   src: url("https://cdn.leafscape.be/Harenosora/harenosora_web.woff2") format("woff2");
 }
 
-.jumbotron {
-  height: 500px;
-  width: 960px;
-  background-image: url("/public/images/sign.png");
-}
-
 .sub-title {
   font-family: "M PLUS 1p", sans-serif;
   color: #fcf5f5;
@@ -26,105 +20,55 @@
   font-family: はれのそら明朝;
 }
 
-@media screen and (min-width: 0px) {
-  /*　画面サイズが768px以下はここを読み込む　*/
-
-  .gymnastics_picture {
-    position: relative;
-  }
-
-  .gymnastics_body {
-    width: 30%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .gymnastics_button {
-    position: absolute;
-    top: 70%;
-    left: 70%;
-  }
-
-  .card_button {
-    font-size: 0.6em;
-    /* 文字の太さをboldに指定 */
-    font-weight: bold;
-    /* 縦方向に10px、
-     * 横方向に30pxの余白を指定 */
-    padding: 10px 20px;
-    /* 文字色を白色に指定 */
-    color: #fff;
-    /* ボーダーをなくす */
-    border-style: none;
-    /* ボタンの影の指定
-     * 影の横幅を2px
-     * 縦長を2px
-     * ぼかしを3px
-     * 広がりを1px
-     * 色を#666（グレー）に指定 */
-    box-shadow: 2px 2px 3px 1px #666;
-    -moz-box-shadow: 2px 2px 3px 1px #666;
-    -webkit-box-shadow: 2px 2px 3px 1px #666;
-    /* テキストの影の指定
-     * 影の横幅を1px
-     * 縦長を1px
-     * ぼかしを2px
-     * 色を#000（黒）に指定 */
-    text-shadow: 1px 1px 2px #000;
-    /* グラデーションの指定 */
-    background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
-    background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
-    /* 角丸の指定 */
-    border-radius: 5px;
-  }
-
-  .card_button:hover {
-    /* 透明度を20%に指定 */
-    opacity: 0.8;
-  }
+.course_picture {
+  position: relative;
+  width: 290px;
+  height: auto;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /*　画面サイズが768pxから1024pxまではここを読み込む　*/
-
-  .gymnastics_picture {
-    position: relative;
-  }
-
-  .gymnastics_body {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .gymnastics_button {
-    position: absolute;
-    top: 70%;
-    left: 60%;
-  }
+.course_picture img {
+  width: 290px;
+  height: auto;
 }
 
-@media screen and (min-width: 1024px) {
-  /*　画面サイズが1024pxからはここを読み込む　*/
+.course_picture .course_title {
+  position: absolute;
+  color: white;
+  /*文字は白に*/
+  font-weight: bold;
+  /*太字に*/
+  font-size: 2.5em;
+  /*サイズ2倍*/
+  font-family: Quicksand, sans-serif;
+  /*Google Font*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
 
-  .gymnastics_picture {
-    position: relative;
-  }
+.course_picture .card_button {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: #fff;
+  border-style: none;
+  box-shadow: 2px 2px 3px 1px #666;
+  -moz-box-shadow: 2px 2px 3px 1px #666;
+  -webkit-box-shadow: 2px 2px 3px 1px #666;
+  text-shadow: 1px 1px 2px #000;
+  background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
+  background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
+  border-radius: 5px;
+}
 
-  .gymnastics_body {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .gymnastics_button {
-    position: absolute;
-    top: 75%;
-    left: 70%;
-  }
+.card_button:hover {
+  /* 透明度を20%に指定 */
+  opacity: 0.8;
 }
 
 ul {

@@ -25,13 +25,13 @@
         <div class="container mt-3 mb-3">
             <div class="title-area">
                 <div class="row no-gutters">
-                    <div class="col-3 logo-image">
+                    <div class="col-2 logo-image">
                         <img src="{{ config('app.image_path.logo_image') }}" alt="ロゴ">
                     </div>
                     <div class="col-5 main-title">
                         <img src="{{  config('app.image_path.title_logo') }}" alt="タイトル">
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-5 text-center">
                         <div id="sns-area"></div>
                     </div>
                 </div>

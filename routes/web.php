@@ -62,6 +62,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']]
     Route::get('information', 'Admin\InformationController@index')->name('admin.information');
     Route::post('information/create', 'Admin\InformationController@create');
     Route::post('information/edit', 'Admin\InformationController@update');
+
+    Route::get('course/create', 'Admin\CourseController@add');
+    Route::get('course/delete', 'Admin\CourseController@delete');
+    Route::get('course/edit', 'Admin\CourseController@edit');
+    Route::get('course', 'Admin\CourseController@index')->name('admin.course');
+    Route::post('course/create', 'Admin\CourseController@create');
+    Route::post('course/edit', 'Admin\CourseController@update');
 });
 
 // 閲覧制限の解除用
