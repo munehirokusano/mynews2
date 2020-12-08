@@ -20,17 +20,20 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">      
     </head>
+    {{--  title-area  --}}
     <header>
-        <div class="container">
-            <div class="row justify-contentspace-between pt-2 align-items-center">
-                <div class="col-md-4 logo-image mb-2">
-                    <img src="{{ config('app.image_path.logo_image') }}" alt="ロゴ">
-                </div>
-                <div class="col-md-4 main-title mb-2">
-                    <img src="{{  config('app.image_path.title_logo') }}" class="img-fluid">
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div id="sns-area"></div>
+        <div class="container mt-3 mb-3">
+            <div class="title-area">
+                <div class="row no-gutters">
+                    <div class="col-3 logo-image">
+                        <img src="{{ config('app.image_path.logo_image') }}" alt="ロゴ">
+                    </div>
+                    <div class="col-5 main-title">
+                        <img src="{{  config('app.image_path.title_logo') }}" alt="タイトル">
+                    </div>
+                    <div class="col-4 text-center">
+                        <div id="sns-area"></div>
+                    </div>
                 </div>
             </div>
         </div>

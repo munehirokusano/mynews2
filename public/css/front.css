@@ -1,3 +1,27 @@
+@media screen and (min-width: 0px) {
+  .title-area .logo-image img {
+    width: 50%;
+  }
+
+  .title-area .main-title img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title-area .logo-image img {
+    width: 30%;
+  }
+
+  .title-area .main-title img {
+    width: 100%;
+  }
+}
+
+#sns-area > span {
+  margin: 0 10px;
+}
+
 .main-title {
   font-family: "Caveat", cursive;
   color: black;
@@ -58,9 +82,5 @@ body {
 
 .posts .post image img {
   width: 250px;
-}
-
-#sns-area > span {
-  margin: 0 10px;
 }
 

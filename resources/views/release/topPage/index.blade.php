@@ -8,58 +8,57 @@
 
 <!-- styles -->
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
-    
+
+{{--  main-image-area  --}}
+<div class="mb-3">
     <div class="row no-gutters justify-content-center">
         <img src="{{ config('app.image_path.top_image') }}" class="img-fluid" alt="タイトル画面">
     </div>
-    <div class="pt-4 pr-4 pl-4">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr class="table-light">
-                            <th width="20%" scope="col">Informtion</th>
-                            <th width="60%" scope="col"></th>
-                            <th width="20%" scope="col"><a href="{{ route('informationIndex') }}">一覧表示</a></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($information_headlines as $information_headline)
-                        <tr class="table-light">
-                            <th scope="row">{{ $information_headline->updated_at->format('Y年m月d日') }}</th>
-                            <td>
-                                <a href="{{ $information_headline->file_path }}">{{ str_limit($information_headline->title, 150) }}</a>
-                                <span>    
-                                    <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
-                                </span>
-                                
-                            </td>
-                            <td></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr class="table-light">
-                            <th width="20%" scope="col">News</th>
-                            <th width="60%" scope="col"></th>
-                            <th width="20%" scope="col"><a href="{{ route('newsIndex') }}">一覧表示</a></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($news_headlines as $news_headline)
-                        <tr class="table-light">
-                            <th scope="row">{{ $news_headline->updated_at->format('Y年m月d日') }}</th>
-                            <td><a href="/news/articles/{{ $news_headline->id }}">{{ $news_headline->title }}</a></td>
-                            <td></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+</div>
+{{--  informtion,news-area  --}}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-light">
+                    <th width="30%" scope="col">Informtion</th>
+                    <th width="70%" scope="col"><div class="text-right"><a href="{{ route('informationIndex') }}">一覧表示</a></div></th>                       
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($information_headlines as $information_headline)
+                    <tr class="table-light">
+                        <th scope="row">{{ $information_headline->updated_at->format('Y年m月d日') }}</th>
+                        <td>
+                            <a href="{{ $information_headline->file_path }}">{{ str_limit($information_headline->title, 150) }}</a>
+                            <span>    
+                                <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
+                            </span>                             
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-light">
+                    <th width="30%" scope="col">News</th>
+                    <th width="70%" scope="col"><div class="text-right"><a href="{{ route('newsIndex') }}">一覧表示</a></div></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($news_headlines as $news_headline)
+                <tr class="table-light">
+                    <th scope="row">{{ $news_headline->updated_at->format('Y年m月d日') }}</th>
+                    <td><a href="/news/articles/{{ $news_headline->id }}">{{ $news_headline->title }}</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
     <div class="card-aria">
         <div class="py-4">
             <div class="container">

@@ -21,8 +21,8 @@ function generate_share_button(area, url, text) {
     
     // シェアボタンにリンクを追加
     var clickEv = 'onclick="popupWindow(this.href); return false;"';
-    var twLink = '<a href="' + twHref + '" ' + clickEv + '><img src="/images/Twitter_Social_Icon_Circle_Color.png" class="img-fluid" alt="ツイッターロゴ"></a>';
-    var fbLink = '<a href="' + fbHref + '" ' + clickEv + '><img src="/images/f_logo_RGB-Blue_1024.png" class="img-fluid" alt="ファイスブックロゴ"></a>';
+    var twLink = '<a href="' + twHref + '" ' + clickEv + '><img src="/images/Twitter_Social_Icon_Circle_Color.png" width="32px" height="32px" alt="ツイッターロゴ"></a>';
+    var fbLink = '<a href="' + fbHref + '" ' + clickEv + '><img src="/images/f_logo_RGB-Blue_1024.png" width="32px" height="32px" alt="ファイスブックロゴ"></a>';
     
     twBtn.innerHTML = twLink;
     fbBtn.innerHTML = fbLink;
