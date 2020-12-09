@@ -16,74 +16,66 @@
     </div>
 </div>
 {{--  informtion,news-area  --}}
-<div class="container">
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr class="table-light">
-                    <th width="30%" scope="col">Informtion</th>
-                    <th width="70%" scope="col"><div class="text-right"><a href="{{ route('informationIndex') }}">一覧表示</a></div></th>                       
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($information_headlines as $information_headline)
+<div class="bg-secondary">
+    <div class="container pt-3 pb-3">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                     <tr class="table-light">
-                        <th scope="row">{{ $information_headline->updated_at->format('Y年m月d日') }}</th>
-                        <td>
-                            <a href="{{ $information_headline->file_path }}">{{ str_limit($information_headline->title, 150) }}</a>
-                            <span>    
-                                <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
-                            </span>                             
-                        </td>
+                        <th width="30%" scope="col">Informtion</th>
+                        <th width="70%" scope="col"><div class="text-right"><a href="{{ route('informationIndex') }}">一覧表示</a></div></th>                       
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach($information_headlines as $information_headline)
+                        <tr class="table-light">
+                            <th scope="row">{{ $information_headline->updated_at->format('Y年m月d日') }}</th>
+                            <td>
+                                <a href="{{ $information_headline->file_path }}">{{ str_limit($information_headline->title, 150) }}</a>
+                                <span>    
+                                    <img src="{{ asset('images/PDF_Icon.png') }}"  class="img-fluid">
+                                </span>                             
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="table-light">
+                        <th width="30%" scope="col">News</th>
+                        <th width="70%" scope="col"><div class="text-right"><a href="{{ route('newsIndex') }}">一覧表示</a></div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($news_headlines as $news_headline)
+                    <tr class="table-light">
+                        <th scope="row">{{ $news_headline->updated_at->format('Y年m月d日') }}</th>
+                        <td><a href="/news/articles/{{ $news_headline->id }}">{{ $news_headline->title }}</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr class="table-light">
-                    <th width="30%" scope="col">News</th>
-                    <th width="70%" scope="col"><div class="text-right"><a href="{{ route('newsIndex') }}">一覧表示</a></div></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($news_headlines as $news_headline)
-                <tr class="table-light">
-                    <th scope="row">{{ $news_headline->updated_at->format('Y年m月d日') }}</th>
-                    <td><a href="/news/articles/{{ $news_headline->id }}">{{ $news_headline->title }}</a></td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-</div>
+</div>     
 {{--  card-area  --}}
 <div class="container">
     <h2 class="movie-title">コース紹介</h2>
     <div class="row">
-        <div class="col-auto mx-auto mb-3">
-            <div class="course_picture">
-                <img src="{{ asset('images/sanple5.jpg') }}">
-                <p class="course_title">新体操</p>
-                <a class="card_button">詳細</a>
+        @foreach($courses as $course)
+            <div class="col-auto mx-auto mb-3">
+                <div class="course_picture">
+                    @if ($course->image_path)
+                        <img src="{{ $course->image_path }}">
+                    @endif
+                    <p class="course_title">{{ $course->title }}</p>
+                    <a href="#" class="card_button">詳細</a>
+                </div>
             </div>
-        </div>
-        <div class="col-auto mx-auto mb-3">
-            <div class="course_picture">
-                <img src="{{ asset('images/sanple5.jpg') }}">
-                <p class="course_title">新体操</p>
-                <a class="card_button">詳細</a>
-            </div>
-        </div>
-        <div class="col-auto mx-auto mb-3">
-            <div class="course_picture">
-                <img src="{{ asset('images/sanple5.jpg') }}">
-                <p class="course_title">新体操</p>
-                <a class="card_button">詳細</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
     <div class="py-4">

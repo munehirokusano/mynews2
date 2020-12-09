@@ -21,9 +21,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-2" for="file">ファイル</label>
+                    <label class="col-md-2" for="filename">ファイル</label>
                     <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="file">
+                        <input type="file" class="form-control-file" name="file" id="filename">
                         <div class="form-text text-info">
                             設定中: {{ $information_form->file_path }}
                         </div>

@@ -70,10 +70,10 @@ class InformationController extends Controller
         if ($request->remove == 'true') {
             $information_form['file_path'] = null;
         } elseif ($request->file('file')) {
-            $path = Storage::disk('s3')->putFile('/file', $form['file'], 'public');
+            $path = Storage::disk('s3')->putFile('/file', $information_form['file'], 'public');
             $information_form['file_path'] = basename($path);
         } else {
-            $information_form['file_path'] = $information->file_path;
+            // $information_form['file_path'] = $information->file_path;
         }
 
         unset($information_form['file']);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Course;
+use App\CourseHistory;
 use Carbon\Carbon;
 use Storage;
 
@@ -13,7 +14,7 @@ class CourseController extends Controller
 {
     public function add()
     {
-        return view('admin.course.create');
+        return view('admin.course.index');
     }
     public function create(Request $request)
     {

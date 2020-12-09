@@ -33,7 +33,7 @@
 
 .course_picture .course_title {
   position: absolute;
-  color: white;
+  color: black;
   /*文字は白に*/
   font-weight: bold;
   /*太字に*/

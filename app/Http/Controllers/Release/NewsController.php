@@ -26,7 +26,11 @@ class NewsController extends Controller
         ]);
     }
     // idから記事を検索して表示
-    public function articles($id)
+    /**
+     * @param integer $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function articles(integer $id)
     {
         $post = News::find($id);
 

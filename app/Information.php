@@ -8,19 +8,15 @@ class Information extends Model
 {
     protected $table = 'informations';
 
-    protected $dates = [
-      'created_at',
-      'updated_at'
-    ];
-
     protected $guarded = array('id');
 
     public static $rules = array(
         'title' => 'required',
+        // 'file' => 'required'
     );
 
     public function informationHistories()
     {
-      return $this->hasMany('App\InformationHistory');
+        return $this->hasMany('App\InformationHistory');
     }
 }

@@ -26,6 +26,10 @@ class InformationController extends Controller
     }
 
     // idから記事を検索して表示
+    /**
+     * @param mixed $id インフォメーションのid
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function articles($id)
     {
         $post = Information::find($id);
