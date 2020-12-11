@@ -66,7 +66,7 @@
     <h2 class="movie-title">コース紹介</h2>
     <div class="row">
         @foreach($courses as $course)
-            <div class="col-auto mx-auto mb-3">
+            <div class="col-auto mx-auto mb-3 course">
                 <div class="course_picture">
                     @if ($course->image_path)
                         <img src="{{ $course->image_path }}">

@@ -14,7 +14,7 @@ class CourseController extends Controller
 {
     public function add()
     {
-        return view('admin.course.index');
+        return view('admin.course.create');
     }
     public function create(Request $request)
     {
@@ -34,7 +34,7 @@ class CourseController extends Controller
         $course->fill($form);
         $course->save();
         
-        return redirect('admin/course/create');
+        return redirect('admin/course');
     }
     public function index(Request $request)
     {

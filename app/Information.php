@@ -12,7 +12,6 @@ class Information extends Model
 
     public static $rules = array(
         'title' => 'required',
-        // 'file' => 'required'
     );
 
     public function informationHistories()
