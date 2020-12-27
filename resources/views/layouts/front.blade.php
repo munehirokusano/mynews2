@@ -11,6 +11,7 @@
         <!-- scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/sns.js') }}" defer></script>
+        
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -52,10 +53,7 @@
                                 <a class="nav-link" href="#">入会案内<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">イベント・行事<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">カテゴリ<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#">会社説明<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">スタッフ紹介<span class="sr-only">(current)</span></a>

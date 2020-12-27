@@ -9,12 +9,20 @@ use App\Contact;
 
 class ContactController extends Controller
 {
+    // 問い合わせ作成画面の表示
+    /**
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function add()
     {
         return view('admin.contact.create');
     }
 
     // 問い合わせ管理者ページの表示
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function index(Request $request)
     {
         $items = Contact::all();
