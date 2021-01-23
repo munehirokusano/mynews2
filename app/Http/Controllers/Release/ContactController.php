@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Contact;
+use Illuminate\Notifications\Messages\MailMessage;
+use App\Mail\SampleNotification;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -16,6 +19,18 @@ class ContactController extends Controller
     // 問い合わせ入力
     public function input()
     {
+    
+        // $mailMessage = new MailMessage;
+
+        // Mail::to('mk09078193819@gmail.com')->send();
+
+        // \Log::debug(__LINE__.' '.__FILE__);
+        // $mailMessage->to('mk09078193819@gmail.com')
+        // ->error()
+        // ->subject('mail test')
+        // ->line('...');
+        // \Log::debug(__LINE__.' '.__FILE__);
+
         return view('release.contact.input');
     }
     // 問い合わせ確認
@@ -59,6 +74,11 @@ class ContactController extends Controller
 
         $contact->fill($item);
         $contact->save();
+
+        $name = 'ララベル太郎さん';
+        $text = 'これからもよろしくお願いいたします。';
+        $to = 'mk09078193819@gmail.com';
+        Mail::to($to)->send(new SampleNotification($name, $text));
         
         return redirect('contact/complete');
     }
