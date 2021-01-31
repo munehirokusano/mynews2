@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Contact;
+use App\Mail\ContactSendMail;
 use Illuminate\Notifications\Messages\MailMessage;
 use App\Mail\SampleNotification;
 use Illuminate\Support\Facades\Mail;
@@ -14,8 +15,9 @@ class ContactController extends Controller
 {
     public function add()
     {
-        
+        //
     }
+   
     // 問い合わせ入力
     public function input()
     {
@@ -75,10 +77,17 @@ class ContactController extends Controller
         $contact->fill($item);
         $contact->save();
 
-        $name = 'ララベル太郎さん';
-        $text = 'これからもよろしくお願いいたします。';
-        $to = 'mk09078193819@gmail.com';
+        // 管理者に送信
+        $name = $item['contact_name'];
+        $text = $item;
+
+        $to = config('app.mail_path.mail_admin');
+        $send_mail = $item['contact_email'];
+        
         Mail::to($to)->send(new SampleNotification($name, $text));
+
+        // 問い合わせ先に自動返信
+        Mail::to($send_mail)->send(new ContactSendMail($text));
         
         return redirect('contact/complete');
     }

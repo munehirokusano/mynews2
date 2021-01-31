@@ -238,4 +238,7 @@ return [
     'video_path' => [
         'video_sample' => env('VIDEO_PATH_SAMPLE'),
     ],
+    'mail_path' => [
+        'mail_admin' => env('MAIL_PATH_ADMIN'),
+    ],
 ];
