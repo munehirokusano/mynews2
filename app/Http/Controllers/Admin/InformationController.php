@@ -35,7 +35,7 @@ class InformationController extends Controller
         $information->fill($form);
         $information->save();
 
-        return redirect('admin/information');
+        return redirect(route('admin.information'));
     }
 
     public function index(Request $request)
@@ -87,7 +87,7 @@ class InformationController extends Controller
         $informationHistories->edited_at = Carbon::now();
         $informationHistories->save();
 
-        return redirect('admin/information');
+        return redirect(route('admin.information'));
     }
 
     public function delete(Request $request)
@@ -95,6 +95,6 @@ class InformationController extends Controller
         $information = Information::find($request->id);
         // 削除する
         $information->delete();
-        return redirect('admin/information/');
-    }  
+        return redirect(route('admin.information'));
+    }
 }

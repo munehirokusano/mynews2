@@ -34,7 +34,7 @@ class CourseController extends Controller
         $course->fill($form);
         $course->save();
         
-        return redirect('admin/course');
+        return redirect(route('admin.course'));
     }
     public function index(Request $request)
     {
@@ -76,7 +76,7 @@ class CourseController extends Controller
         $courseHistories->edited_at = Carbon::now();
         $courseHistories->save();
         
-        return redirect('admin/course/');
+        return redirect(route('admin.course'));
     }
     
     // 記事の削除
@@ -85,6 +85,6 @@ class CourseController extends Controller
         $course = Course::find($request->id);
         
         $course->delete();
-        return redirect('admin/course/');
+        return redirect(route('admin.course'));
     }
 }

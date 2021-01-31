@@ -34,7 +34,7 @@ class PictureTitleController extends Controller
         $pictureTitle->fill($form);
         $pictureTitle->save();
         
-        return redirect('admin/pictureTitle/create');
+        return redirect(route('admin.pictureTitle'));
     }
     
     public function index(Request $request)
@@ -89,7 +89,7 @@ class PictureTitleController extends Controller
             // $history->edited_at = Carbon::now();
             // $history->save();
         
-            return redirect('admin/pictureTitle/');
+            return redirect(route('admin.pictureTitle'));
     }
     
     public function delete(Request $request)
@@ -97,6 +97,6 @@ class PictureTitleController extends Controller
         $pictureTitle = PictureTitle::find($request->id);
         
         $pictureTitle->delete();
-        return redirect('admin/pictureTitle/');
+        return redirect(route('admin.pictureTitle'));
     }
 }

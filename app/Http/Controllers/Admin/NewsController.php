@@ -37,7 +37,7 @@ class NewsController extends Controller
         $news->fill($form);
         $news->save();
         
-        return redirect('admin/news/create');
+        return redirect(route('admin.news'));
     }
 
     // 記事の表示
@@ -87,7 +87,7 @@ class NewsController extends Controller
         $history->edited_at = Carbon::now();
         $history->save();
         
-        return redirect('admin/news/');
+        return redirect(route('admin.news'));
     }
     
     // 記事の削除
@@ -96,6 +96,6 @@ class NewsController extends Controller
         $news = News::find($request->id);
         
         $news->delete();
-        return redirect('admin/news/');
-    }  
+        return redirect(route('admin.news'));
+    }
 }

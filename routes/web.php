@@ -36,9 +36,9 @@ Route::group(['prefix' => 'information'], function () {
 });
 
 // 閲覧制限 開発者: system-only=9, 管理者: admin-higher=5, 一般ユーザー: user-higher=0 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'can:admin-higher']], function () {
+Route::group(['prefix' => 'asukasupouthukanrigamen', 'middleware' => ['auth', 'can:admin-higher']], function () {
 
-    Route::get('/', 'Admin\TopPageController@index');
+    Route::get('/', 'Admin\TopPageController@index')->name('admin.index');
 
     Route::get('user/create', 'Admin\UserController@add');
     Route::get('user', 'Admin\UserController@index')->name('admin.user');
@@ -101,18 +101,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'Release\ProfileController@index');
 Route::get('/blogPage/{headline_id}', 'Release\NewsController@blogPage');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'asukasupouthukanrigamen', 'middleware' => 'auth'], function () {
     
     
     Route::get('profile/create', 'Admin\ProfileController@add');
     Route::get('profile/delete', 'Admin\ProfileController@delete');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
-    Route::get('profile', 'Admin\ProfileController@index');
+    Route::get('profile', 'Admin\ProfileController@index')->name('admin.profile');
     Route::post('profile/create', 'Admin\ProfileController@create');
     Route::post('profile/edit', 'Admin\ProfileController@update');
 
     Route::get('pictureTitle/create', 'Admin\PictureTitleController@add');
-    Route::get('pictureTitle', 'Admin\PictureTitleController@index');
+    Route::get('pictureTitle', 'Admin\PictureTitleController@index')->name('admin.pictureTitle');
     Route::get('pictureTitle/edit', 'Admin\PictureTitleController@edit');
     Route::get('pictureTitle/delete', 'Admin\PictureTitleController@delete');
     Route::post('pictureTitle/create', 'Admin\PictureTitleController@create');

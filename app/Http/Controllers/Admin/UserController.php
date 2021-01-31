@@ -40,7 +40,7 @@ class UserController extends Controller
         $contact = User::find($request->input('id'));
         $contact->delete();
 
-        return redirect('admin/user/');
+        return redirect(route('admin.user'));
     }
 
     //管理者権限の付与
@@ -55,6 +55,6 @@ class UserController extends Controller
 
         $roleup_user = User::find($request->input('id'));
 
-        return redirect('admin/user/');
+        return redirect(route('admin.user'));
     }
 }

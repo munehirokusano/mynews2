@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $profiles->fill($form);
         $profiles->save();
         
-        return redirect('admin/profile/create');
+        return redirect(route('admin.profile'));
     }
     public function index(Request $request) {
         $cond_name = $request->cond_name;
@@ -59,16 +59,14 @@ class ProfileController extends Controller
         $profiles_histry->edited_at = Carbon::now();
         $profiles_histry->save();
         
-        return redirect('admin/profile/');
+        return redirect(route('admin.profile'));
     }
     
     public function delete(Request $request) {
         $profiles = Profile::find($request->id);
         $profiles->delete();
         
-        return redirect('admin/profile/');
+        return redirect(route('admin.profile'));
     
     }
-    
-    
 }
